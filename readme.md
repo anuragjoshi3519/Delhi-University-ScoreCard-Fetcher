@@ -9,9 +9,10 @@
 7. pip install requests
 8. pip intall bs4
 
-# To run the program:
+## To run the program:
 
 1. First clone the repository
 2. Using terminal, head the cloned folder
+   _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
 3. Check your college code by running:- $ python printClgCodes.py
 4. Run 'fetchResult.py' and start fetching:- $ python fetchResult.py
