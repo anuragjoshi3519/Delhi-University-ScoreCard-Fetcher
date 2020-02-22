@@ -1,6 +1,7 @@
 ## Install these packages : 
 
 _sudo apt-get update_
+
 _sudo apt-get upgrade_
 
 1. sudo apt-get install wkhtmltopdf
