@@ -1,14 +1,16 @@
 ## Install these packages : 
 
-1. sudo apt-get update
-2. sudo apt-get install wkhtmltopdf
-3. sudo apt-get install tesseract-ocr
-4. sudo apt-get install libtesseract-dev
-5. pip install pdfkit
-6. pip install pytesseract
-7. pip install requests
-8. pip intall bs4
-9. pip install Pillow
+_sudo apt-get update_
+_sudo apt-get upgrade_
+
+1. sudo apt-get install wkhtmltopdf
+2. sudo apt-get install tesseract-ocr
+3. sudo apt-get install libtesseract-dev
+4. pip install pdfkit
+5. pip install pytesseract
+6. pip install requests
+7. pip intall bs4
+8. pip install Pillow
 
 ## To run the program:
 
