@@ -16,4 +16,4 @@
 
    _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
 3. Check your college code by running:- $ python printClgCodes.py
-4. Run 'fetchResult.py' and start fetching:- $ python fetchScoreCard.py
+4. Run 'fetchScoreCard.py' and start fetching:- $ python fetchScoreCard.py
