@@ -4,6 +4,7 @@ import urllib.request
 from PIL import Image
 import pytesseract
 import pdfkit
+import os
 from bs4 import BeautifulSoup
 
 
@@ -11,7 +12,8 @@ url = 'https://duresult.in/students/Combine_GradeCard.aspx'
 header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
 
 def connect():
-    
+    if not os.path.isdir('data'):
+        os.mkdir('data')
     with requests.Session() as request:
 
         form_data={}
@@ -73,6 +75,9 @@ def fetchGradeCard(clgCode,rollno):
         for img in result.findAll('img'):
             img.decompose()
             
+        if not os.path.isdir('Results_pdf'):
+            os.mkdir('Results_pdf')
+
         filepath = 'Results_pdf/ScoreCard_'+rollno+'.pdf'
 
         with open('data/page.html','w') as f:

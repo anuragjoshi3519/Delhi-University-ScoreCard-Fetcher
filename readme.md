@@ -8,6 +8,7 @@
 6. pip install pytesseract
 7. pip install requests
 8. pip intall bs4
+9. pip install Pillow
 
 ## To run the program:
 
