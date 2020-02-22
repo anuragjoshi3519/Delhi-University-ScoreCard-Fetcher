@@ -1,12 +1,17 @@
-Packages to be installed
+## Install these packages : 
 
-sudo apt-get update
-sudo apt-get install wkhtmltopdf
-sudo apt-get install tesseract-ocr
-sudo apt-get install libtesseract-dev
+1. sudo apt-get update
+2. sudo apt-get install wkhtmltopdf
+3. sudo apt-get install tesseract-ocr
+4. sudo apt-get install libtesseract-dev
+5. pip install pdfkit
+6. pip install pytesseract
+7. pip install requests
+8. pip intall bs4
 
+# To run the program:
 
-pip install pdfkit
-pip install pytesseract
-pip install requests
-pip intall bs4
+1. First clone the repository
+2. Using terminal, head the cloned folder
+3. Check your college code by running:- $ python printClgCodes.py
+4. Run 'fetchResult.py' and start fetching:- $ python fetchResult.py
