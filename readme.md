@@ -13,6 +13,10 @@ _sudo apt-get upgrade_
 7. pip install requests
 8. pip install bs4
 9. pip install Pillow
+10. pip install lxml
+
+
+_# make sure you have python3.x and pip installed on your system_
 
 ## To run the program:
 
