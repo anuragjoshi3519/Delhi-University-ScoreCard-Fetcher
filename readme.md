@@ -7,11 +7,12 @@ _sudo apt-get upgrade_
 1. sudo apt-get install wkhtmltopdf
 2. sudo apt-get install tesseract-ocr
 3. sudo apt-get install libtesseract-dev
-4. pip install pdfkit
-5. pip install pytesseract
-6. pip install requests
-7. pip install bs4
-8. pip install Pillow
+4. sudo apt-get install python-lxml
+5. pip install pdfkit
+6. pip install pytesseract
+7. pip install requests
+8. pip install bs4
+9. pip install Pillow
 
 ## To run the program:
 

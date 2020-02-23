@@ -95,7 +95,7 @@ def main():
 
 if __name__=='__main__':
     
-    print("You can check your college code by running the command: $ python printClgCodes.py ")
+    print("\nYou can check your college code by running the command: $ python printClgCodes.py ")
     print("----------------------------------------------------------------------------------")
     print("----------------------------------------------------------------------------------\n")
     
