@@ -10,7 +10,7 @@ _sudo apt-get upgrade_
 4. pip install pdfkit
 5. pip install pytesseract
 6. pip install requests
-7. pip intall bs4
+7. pip install bs4
 8. pip install Pillow
 
 ## To run the program:
