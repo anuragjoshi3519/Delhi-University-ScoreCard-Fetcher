@@ -1,396 +1,208 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1"><title>
 	Untitled Page
-</title><link href="../Scripts/STYLE.css" rel="Stylesheet" type="text/css"/><style type="text/css">
-	.StudentHeader1_Menu1_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
-	.StudentHeader1_Menu1_1 { color:#7C6F57;font-family:Verdana;font-size:Small;text-decoration:none; }
-	.StudentHeader1_Menu1_2 { color:#7C6F57;background-color:#F7F6F3;font-family:Verdana;font-size:Small; }
-	.StudentHeader1_Menu1_3 {  }
-	.StudentHeader1_Menu1_4 { padding:2px 5px 2px 5px; }
-	.StudentHeader1_Menu1_5 {  }
-	.StudentHeader1_Menu1_6 { padding:2px 5px 2px 5px; }
-	.StudentHeader1_Menu1_7 { background-color:#F7F6F3; }
-	.StudentHeader1_Menu1_8 {  }
-	.StudentHeader1_Menu1_9 { background-color:#5D7B9D; }
-	.StudentHeader1_Menu1_10 {  }
-	.StudentHeader1_Menu1_11 { background-color:#5D7B9D; }
-	.StudentHeader1_Menu1_12 { color:White; }
-	.StudentHeader1_Menu1_13 { color:White;background-color:#7C6F57; }
-	.StudentHeader1_Menu1_14 { color:White; }
-	.StudentHeader1_Menu1_15 { color:White;background-color:#7C6F57; }
+</title><link href="../Scripts/STYLE.css" rel="Stylesheet" type="text/css"/>
+<script>
+        function PrintMe() {
+            document.getElementById("Print").style.visibility = "hidden";
+            document.getElementById("Close").style.visibility = "hidden";
+            window.print();
+            document.getElementById("Print").style.visibility = "visible";
+            document.getElementById("Close").style.visibility = "visible";
+            }
+    </script>
+</head>
+<body>
+<form action="Combine_GradeCardReport_CBCS.aspx?ExamFlag=CBCS&amp;ExamType=Semester&amp;CollegeCode=067&amp;CollegeName=Shaheed+Sukhdev+College+of+Business+Studies&amp;CourseCode=570&amp;CourseName=(CBCS)+B.SC.(HONS.)+COMPUTER+SCIENCE&amp;Part=III&amp;Sem=V&amp;Rollno=17067570007&amp;Name=PARAG+DUDEJA&amp;IP_Address=203.192.236.155" id="form1" method="post" name="form1">
+<div>
+<input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="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"/>
+</div>
+<div>
+<input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="53B78542"/>
+</div>
+<p>
+</p><table align="center" border="1" width="675">
+<tr>
+<td>
+<table width="100%">
+<tr>
+<td colspan="2">
+<table width="100%">
+<tr>
+<td align="center" width="15%">
 
-</style></head>
-<body background="../Images/background.png">
-<form action="Combine_GradeCard.aspx" id="form1" method="post" name="form1">
-<div>
-<input id="__EVENTTARGET" name="__EVENTTARGET" type="hidden" value=""/>
-<input id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden" value=""/>
-<input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUJOTc3OTgxMzM3DxYEHgdjYXB0Y2hhBQY1NjIzMzUeCUlwQWRkcmVzcwUPMjAzLjE5Mi4yMzYuMTU1FgICAw9kFgwCAQ9kFgICBQ8PFgIeBFRleHQFM1Jlc3VsdHMgKFNlbWVzdGVyL0FubnVhbCBFeGFtaW5hdGlvbiBOb3YtRGVjIDIwMTkgKWRkAgcPDxYCHwIFDyAoTm92LURlYyAyMDE5KWRkAhUPEA8WBh4NRGF0YVRleHRGaWVsZAUJQ09MTF9OQU1FHg5EYXRhVmFsdWVGaWVsZAUJQ09MTF9DT0RFHgtfIURhdGFCb3VuZGdkEBWmARI8LS0tLS1TZWxlY3QtLS0tLT4cQWNoYXJ5YSBOYXJlbmRyYSBEZXYgQ29sbGVnZSRBZGl0aSBNYWhhdmlkaGxheWEgKFRlYWNoaW5nIENlbnRyZSkTQWRpdGkgTWFoYXZpZHlhbGF5YSRBcnlhYmhhdHRhIENvbGxlZ2UgKFRlYWNoaW5nIENlbnRyZSk9QXJ5YWJoYXR0YSBDb2xsZWdlIFtGb3JtZXJseSBSYW0gTGFsIEFuYW5kIENvbGxlZ2UgKEV2ZW5pbmcpXR9BdG1hIFJhbSBTYW5hdGFuIERoYXJhbSBDb2xsZWdlGEJoYWdpbmkgTml2ZWRpdGEgQ29sbGVnZSpCaGFnaW5pIE5pdmVkaXRhIENvbGxlZ2UgKFRlYWNoaW5nIENlbnRyZSkPQmhhcmF0aSBDb2xsZWdlIUJoYXJhdGkgQ29sbGVnZSAtIFRlYWNoaW5nIENlbnRyZSpCaGFza2FyYWNoYXJ5YSBDb2xsZWdlIG9mIEFwcGxpZWQgU2NpZW5jZXMRQ0FNUFVTIExBVyBDRU5UUkUXQ2FtcHVzIG9mIE9wZW4gTGVhcm5pbmciQ2x1c3RlciBJbm5vdmF0aW9uIENlbnRyZSAoQy5JLkMuKR1Db2xsZWdlIE9mIFZvY2F0aW9uYWwgU3R1ZGllcy9Db2xsZWdlIG9mIFZvY2F0aW9uYWwgU3R1ZGllcyAoVGVhY2hpbmcgQ2VudHJlKRJEYXVsYXQgUmFtIENvbGxlZ2UcRGVlbiBEYXlhbCBVcGFkaHlheWEgQ29sbGVnZS5EZWVuIERheWFsIFVwYWRoeWF5YSBDb2xsZWdlIChUZWFjaGluZyBDZW50cmUpIERlbGhpIENvbGxlZ2UgT2YgQXJ0cyAmIENvbW1lcmNlGkRlbGhpIFNjaG9vbCBvZiBKb3VybmFsaXNtHURlcGFydG1lbnQgb2YgQWR1bHQgRWR1Y2F0aW9uHURlcGFydG1lbnQgb2YgQWZyaWNhbiBTdHVkaWVzGkRlcGFydG1lbnQgb2YgQW50aHJvcG9sb2d5FERlcGFydG1lbnQgb2YgQVJBQklDU0RlcGFydG1lbnQgb2YgQi5BIChQcm9ncmFtbWUgQ29tbWl0dGVlKSBBcHBsaWNhdGlvbiBDb3Vyc2UtSUlJIEZvdW5kYXRpb24gQ291cnNlLUlJIkRlcGFydG1lbnQgb2YgQmlvIE1lZGljYWwgUmVzZWFyY2gbRGVwYXJ0bWVudCBvZiBCaW8tY2hlbWlzdHJ5FERlcGFydG1lbnQgb2YgQm90YW55HkRlcGFydG1lbnQgb2YgQnVkZGhpc3QgU3R1ZGllcyBEZXBhcnRtZW50IG9mIEJ1c2luZXNzIEVjb25vbWljcxdEZXBhcnRtZW50IG9mIENoZW1pc3RyeRFEZXBhcnRtZW50IG9mIENMQxZEZXBhcnRtZW50IG9mIENvbW1lcmNlHkRlcGFydG1lbnQgb2YgQ29tcHV0ZXIgU2NpZW5jZSBEZXBhcnRtZW50IG9mIEVhc3QgQXNpYW4gU3R1ZGllcxdEZXBhcnRtZW50IG9mIEVjb25vbWljcyBEZXBhcnRtZW50IG9mIEVkdWNhdGlvbiAoQy5JLkUuKRlEZXBhcnRtZW50IG9mIEVsZWN0cm9uaWNzFURlcGFydG1lbnQgb2YgRW5nbGlzaCNEZXBhcnRtZW50IG9mIEVudmlyb25tZW50YWwgU3R1ZGllcz1EZXBhcnRtZW50IG9mIEZhY3VsdHkgb2YgQXBwbGllZCBTb2NpYWwgU2NpZW5jZXMgJiBIdW1hbml0aWVzIERlcGFydG1lbnQgb2YgRmFjdWx0eSBvZiBTY2llbmNlFkRlcGFydG1lbnQgb2YgR2VuZXRpY3MXRGVwYXJ0bWVudCBvZiBHZW9ncmFwaHkVRGVwYXJ0bWVudCBvZiBHZW9sb2d5KkRlcGFydG1lbnQgb2YgR2VybWFuaWMgYW5kIFJvbWFuY2UgU3R1ZGllcxNEZXBhcnRtZW50IG9mIEhpbmRpFURlcGFydG1lbnQgb2YgSGlzdG9yeRtEZXBhcnRtZW50IG9mIEhpc3RvcnkgKFNEQykaRGVwYXJ0bWVudCBvZiBIb21lIFNjaWVuY2VORGVwYXJ0bWVudCBvZiBJbmRpcmEgR2FuZGhpIEluc3RpdHV0ZSBvZiBQaHlzaWNhbCBFZHVjYXRpb24gYW5kIFNwb3J0cyBTY2llbmNlNURlcGFydG1lbnQgb2YgSW50ZXItRGlzY2lwbGluYXJ5IEFuZCBBcHBsaWVkIFNjaWVuY2VzEkRlcGFydG1lbnQgb2YgTEMtSS1EZXBhcnRtZW50IG9mIExpYnJhcnkgYW5kIEluZm9ybWF0aW9uIFNjaWVuY2UZRGVwYXJ0bWVudCBvZiBMaW5ndWlzdGljcxlEZXBhcnRtZW50IG9mIE1hdGhlbWF0aWNzGkRlcGFydG1lbnQgb2YgTWljcm9iaW9sb2d5FURlcGFydG1lbnQgb2YgTUlMJiBMUxNEZXBhcnRtZW50IG9mIE11c2ljIkRlcGFydG1lbnQgb2YgT3BlcmF0aW9uYWwgUmVzZWFyY2gVRGVwYXJ0bWVudCBvZiBQZXJzaWFuGERlcGFydG1lbnQgb2YgUGhpbG9zb3BoeR5EZXBhcnRtZW50IG9mIFBoaWxvc29waHkgKFNEQykVRGVwYXJ0bWVudCBvZiBQaHlzaWNzH0RlcGFydG1lbnQgb2YgUG9saXRpY2FsIFNjaWVuY2UYRGVwYXJ0bWVudCBvZiBQc3ljaG9sb2d5FURlcGFydG1lbnQgb2YgUHVuamFiaRZEZXBhcnRtZW50IG9mIFNhbnNrcml0L0RlcGFydG1lbnQgb2YgU2xhdm9uaWMgQW5kIEZpbm5vLVVncmlhbiBTdHVkaWVzHURlcGFydG1lbnQgb2YgU29jaWFsIFNjaWVuY2VzGURlcGFydG1lbnQgb2YgU29jaWFsIFdvcmsXRGVwYXJ0bWVudCBvZiBTb2Npb2xvZ3kYRGVwYXJ0bWVudCBvZiBTdGF0aXN0aWNzEkRlcGFydG1lbnQgb2YgVXJkdRVEZXBhcnRtZW50IG9mIFpvb2xvZ3kYRGVzaGJhbmRodSBDb2xsZWdlIChEYXkpI0RyLiBCLlIuIEFtYmVka2FyIChUZWFjaGluZyBDZW50cmUpMERyLiBCLlIuIEFtYmVka2FyIENlbnRlciBmb3IgQmlvbWVkaWNhbCBSZXNlYXJjaB1Eci4gQmhpbSBSYW8gQW1iZWRrYXIgQ29sbGVnZTVEdXJnYWJhaSBEZXNobXVraCBDb2xsZWdlIG9mIFNwZWNpYWwgRWR1Y2F0aW9uIChWLkkuKRhEeWFsIFNpbmdoIENvbGxlZ2UgKERheSkYRHlhbCBTaW5naCBDb2xsZWdlIChFdmUpHUZhY3VsdHkgb2YgTWFuYWdlbWVudCBTdHVkaWVzDUdhcmdpIENvbGxlZ2UQSGFucyBSYWogQ29sbGVnZSJIYW5zIFJhaiBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlDUhpbmR1IENvbGxlZ2UVSS5QLkNvbGxlZ2UgRm9yIFdvbWVuNkluZGlyYSBHYW5kaGkgSW5zdGl0dXRlIG9mIFBoeS4gRWR1LiAmIFNwb3J0cyBTY2llbmNlcy5JbnN0aXR1dGUgb2YgQ3liZXIgU2VjdXJpdHkgYW5kIExhdyAoSS5DLlMuTC4pG0luc3RpdHV0ZSBPZiBIb21lIEVjb25vbWljcxtKYW5raSBEZXZpIE1lbW9yaWFsIENvbGxlZ2UtSmFua2kgRGV2aSBNZW1vcmlhbCBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlFEplc3VzICYgTWFyeSBDb2xsZWdlJkplc3VzICYgTWFyeSBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlDEp1YmlsZWUgSGFsbA9LYWxpbmRpIENvbGxlZ2UhS2FsaW5kaSBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlE0thbWxhIE5laHJ1IENvbGxlZ2UkS2VzaGF2IE1haGF2aWRsYXlhIChUZWFjaGluZyBDZW50cmUpFEtlc2hhdiBNYWhhdmlkeWFsYXlhEktpcm9yaSBNYWwgQ29sbGVnZRJMYWR5IElyd2luIENvbGxlZ2UfTGFkeSBTaHJpIFJhbSBDb2xsZWdlIGZvciBXb21lbhJMYWtzaG1pYmFpIENvbGxlZ2UkTGFrc2htaWJhaSBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlDExBVyBDRU5UUkUtSQ1MQVcgQ0VOVFJFLUlJGE1haGFyYWphIEFncmFzZW4gQ29sbGVnZSpNYWhhcmFqYSBBZ3Jhc2VuIENvbGxlZ2UgLSBUZWFjaGluZyBDZW50cmUlTWFoYXJzaGkgVmFsbWlraSBDb2xsZWdlIG9mIEVkdWNhdGlvbhBNYWl0cmV5aSBDb2xsZWdlIk1haXRyZXlpIENvbGxlZ2UgLSBUZWFjaGluZyBDZW50cmUdTWF0YSBTdW5kcmkgQ29sbGVnZSBGb3IgV29tZW4vTWF0YSBTdW5kcmkgQ29sbGVnZSBGb3IgV29tZW4gLSBUZWFjaGluZyBDZW50cmUNTWlyYW5kYSBIb3VzZR9NaXJhbmRhIEhvdXNlIChUZWFjaGluZyBDZW50cmUpHE1vdGkgTGFsIE5laHJ1IENvbGxlZ2UgKERheSkcTW90aSBMYWwgTmVocnUgQ29sbGVnZSAoRXZlKShNb3RpIExhbCBOZWhydSBDb2xsZWdlIChUZWFjaGluZyBDZW50cmUpLE5vbiBDb2xsZWdpYXRlIFdvbWVuIEVkdWNhdGlvbiBCb2FyZCAoTkNXRUIpGFAuRy5ELkEuVi4gQ29sbGVnZSAoRGF5KRhQLkcuRC5BLlYuIENvbGxlZ2UgKEV2ZSkkUC5HLkQuQS5WLiBDb2xsZWdlIC0gVGVhY2hpbmcgQ2VudHJlEFJhamRoYW5pIENvbGxlZ2UiUmFqZGhhbmkgQ29sbGVnZSAoVGVhY2hpbmcgQ2VudHJlKRtSYW0gTGFsIEFuYW5kIENvbGxlZ2UgKERheSkRUmFtYW51amFuIENvbGxlZ2UjUmFtYW51amFuIENvbGxlZ2UgKFRlYWNoaW5nIENlbnRyZSkOUmFtamFzIENvbGxlZ2UXUy5HLlQuQi4gS2hhbHNhIENvbGxlZ2UXU2F0eWF3YXRpIENvbGxlZ2UgKERheSkXU2F0eWF3YXRpIENvbGxlZ2UgKEV2ZSkjU2F0eWF3YXRpIENvbGxlZ2UgKFRlYWNoaW5nIENlbnRyZSkXU2Nob29sIG9mIE9wZW4gTGVhcm5pbmcmU2Nob29sIG9mIE9wZW4gTGVhcm5pbmcgKE5vcnRoIEZlbWFsZSkkU2Nob29sIG9mIE9wZW4gTGVhcm5pbmcgKE5vcnRoIE1hbGUpJlNjaG9vbCBvZiBPcGVuIExlYXJuaW5nIChTb3V0aCBGZW1hbGUpJFNjaG9vbCBvZiBPcGVuIExlYXJuaW5nIChTb3V0aCBNYWxlKSJTaGFoZWVkIEJoYWdhdCBTaW5naCBDb2xsZWdlIChEYXkpIlNoYWhlZWQgQmhhZ2F0IFNpbmdoIENvbGxlZ2UgKEV2ZSk1U2hhaGVlZCBSYWpndXJ1IENvbGxlZ2Ugb2YgQXBwbGllZCBTY2llbmNlcyBmb3IgV29tZW4rU2hhaGVlZCBTdWtoZGV2IENvbGxlZ2Ugb2YgQnVzaW5lc3MgU3R1ZGllcw9TaGl2YWppIENvbGxlZ2UXU2h5YW0gTGFsIENvbGxlZ2UgKERheSkXU2h5YW0gTGFsIENvbGxlZ2UgKEV2ZSkxU2h5YW1hIFByYXNhZCBNdWtoZXJqZWUgQ29sbGVnZSAtIFRlYWNoaW5nIENlbnRyZShTaHlhbWEgUHJhc2FkIE11a2hlcmppIENvbGxlZ2UgZm9yIFdvbWVuFlNPTCBTdHVkeSBDZW50ZXIgU291dGgbU3JpIEF1cm9iaW5kbyBDb2xsZWdlIChEYXkpG1NyaSBBdXJvYmluZG8gQ29sbGVnZSAoRXZlKSdTcmkgQXVyb2JpbmRvIENvbGxlZ2UgKFRlYWNoaW5nIENlbnRyZSkpU3JpIEd1cnUgR29iaW5kIFNpbmdoIENvbGxlZ2UgT2YgQ29tbWVyY2U7U3JpIEd1cnUgR29iaW5kIFNpbmdoIENvbGxlZ2UgT2YgQ29tbWVyY2UgLSBUZWFjaGluZyBDZW50cmUhU3JpIEd1cnUgTmFuYWsgRGV2IEtoYWxzYSBDb2xsZWdlG1NyaSBSYW0gQ29sbGVnZSBPZiBDb21tZXJjZRhTcmkgVmVua2F0ZXN3YXJhIENvbGxlZ2UUU3QuIFN0ZXBoZW5zIENvbGxlZ2UaU3dhbWkgU2hyYWRkaGFuYW5kIENvbGxlZ2UTVW5pdmVyc2l0eSBvZiBEZWxoaRNWaXZla2FuYW5kYSBDb2xsZWdlJVZpdmVrYW5hbmRhIENvbGxlZ2UgLSBUZWFjaGluZyBDZW50cmUaWmFraXIgSHVzYWluIENvbGxlZ2UgKEV2ZSkgWmFraXIgSHVzYWluIERlbGhpIENvbGxlZ2UgKERheSkVpgESPC0tLS0tU2VsZWN0LS0tLS0+AzAwMQMzMzIDMDAyAzMzMwMwNTkDMDAzAzAwNwMzMzUDMDA4AzMyNQMwMDkDMzA5A0NPTAMzMTIDMDEzAzMzNgMwMTQDMDE1AzM0NAMwMTYDMzE2AzIyNQMyMjYDMjE1AzIwMQMyOTADMjU4AzI0OQMyMTYDMjAyAzI0OAMyMTcDMjM4AzI0MQMyMzQDMjI4AzIyNwMyNDMDMjUxAzIwMwMyMTgDMTAxAzExNAMyNTIDMjI5AzIxOQMyMDQDMjA1AzIzMQMyOTEDMjIwAzI1NQMxMDcDMjM5AzIwNgMyMDcDMjM1AzI1MwMyMDgDMjQwAzIzNgMyMDkDMjEwAzM0OQMyMjIDMjMyAzIxMQMyMTIDMjEzAzI0MgMxMTUDMjMzAzIzMAMyMzcDMjE0AzIyMwMwMTkDMzM0AzMxOAMwMTADMzE0AzAyMQMwMjIDMTA5AzAyNAMwMjUDMzMxAzAyNgMwMjkDMDI4AzMxNwMwMzADMDMxAzMyMgMwMzIDMzI2AzMwNgMwMzMDMzIzAzAzNAMzMzcDMDM1AzAzNgMwMzgDMDM5AzA0MAMzMjgDMzEwAzMxMQMwNDEDMzIwAzMxNQMwNDMDMzI3AzA0NAMzMjEDMDQ3AzMzOAMwNDgDMDQ5AzMzOQMzMDcDMDUzAzA1NAMzMjkDMDU1AzM0MAMwNTgDMDIwAzM0MQMwNTYDMDY4AzA2MgMwNjMDMzQyA1NPTAMzNDYDMzQ1AzM0OAMzNDcDMDY0AzA2NQMwNjYDMDY3AzA3MQMwNzMDMDc0AzMyNAMwNzUEU09MUwMwNzYDMDc3AzM0MwMwNzgDMzMwAzA2OQMwNzIDMDc5AzA4MAMwODEDMTAwAzA4NAMzMTkDMDg2AzA4NRQrA6YBZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAh0PZBYCZg9kFgICAw8PFgIeCEltYWdlVXJsBUNHZW5lcmF0ZUNhcHRjaGEuYXNweD9DYXB0Y2hhQ29kZT01NjIzMzUmRGF0ZVRpbWU9NjM3MTgxMDY4NjgwMjU5MDI0ZGQCJw8PFgIeB1Zpc2libGVoZGQCLQ8PFgIfB2hkZGQN+dnD9xIUP8lTyU9ju5enjyhdkg=="/>
-</div>
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-<script src="/WebResource.axd?d=n2ozL3_oJ7mO690IVXG82PKj01Do3EmVGrc91yh690SjpSYYnNnYbVy52rJNqTu3zaP7IgmzY3oVIjjIEKeCdYwZ07g1&amp;t=636271869297880478" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=0C6fuk5qwMPtFhDIzpyy76Rsqses6iFo1yqBFhDnmMcT8oKTdvBehUdTYHS2SpMhH4i3hFTDUmp8OMXava9QKHStZXlN-C2FQcOJjOGWDacN-Pua1CdSPbcKAdfFVLzdhQdsuw2&amp;t=477a62c1" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=1T2GfJ19MQgMTWuPOpH4Vza_q_erWX2kFvWH_0mdFxCzeZhL30tAtq9-tdz_qLZKYJcdAoeMfDbGXUMJhSB0Uc1Tr3ZduOGr9R7MTgasCbc_D7sIBmmVlcXGSp94Kqgy6pk0JcAPlH0yciqC4C5Lq9ZE88xthJDRzd2kTBtGLpGxwwJ60&amp;t=3f4a792d" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
-//]]>
-</script>
-<script src="/ScriptResource.axd?d=fTwK1wuM4AvAlVvcgc8k29lRPg1F1_m7ieeaMTa-LSoh32sd3rwV8jA0oAiLJTSZzjD5nQ_X9YMVmCVRncFU-iZ80a7oLbmMe6GdIFMrusdxEtJmUOpwMCWQL5a-3JtBxWRIKpaHHTRPwE87ZXMKDMddZFNz-m103kBZ2OjUi5IWFrVc0&amp;t=3f4a792d" type="text/javascript"></script>
-<div>
-<input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="35D4F7A9"/>
-<input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="/wEWrAECtoOFxgICq8PapwoCypTxxQ4CwPyMgQgC2OuaqgIC5evuqgIC/YL9twQC6KaP6wkC/oLBtwQC4uX5gA8Cq9ex6gMC14+53gcCq9e96gMC6Kab6wkC76ab6wkCnsKviwgC2OviqgIC/oLFtwQCzM6T9wUCk7inwQkCtNe56gMClrjTwAkCyc6b9wUCzM6b9wUCqte96gMCz86f9wUCqte56gMCxvyMgQgCrcWO9AYC1Y+t3gcC7qaL6wkCz86b9wUC2+vuqgIC1Y+p3gcC4OX9gA8C1Y+13gcCxvy8gQgCkbjfwAkC1Y+x3gcC4OXxgA8C/ILxtwQCxvywgQgC/ILBtwQC1Y+93gcCwfyMgQgCkLinwQkC2+uSqgIC7qaT6wkC7qaf6wkCkbijwQkCqteF6gMCxvy4gQgCxvzggQgCrcWi9AYCqtep6gMC4+X5gA8C7qaX6wkCz87n9wUC4OX5gA8Cqtex6gMC/IL1twQC1Y+53gcCrcXa9wYCz86T9wUC7qab6wkCrcWu9AYC76aL6wkC2+vmqgIC2+uaqgICxvyAgQgC2+viqgIC/ILFtwQC2+ueqgICtde56gMC/IL9twQCrcWm9AYC4OX1gA8CkbinwQkC/IL5twQC6Kaf6wkClrjfwAkCyo+93gcCr8Wu9AYClrinwQkCwPyEgQgC5evmqgIC6aab6wkCk7jbwAkCtNe96gMCx/y4gQgCyc6f9wUC6KaT6wkC14+x3gcC4eX9gA8Cr8Wm9AYCwPy4gQgC2OvmqgIC5euaqgICzM6f9wUCzM7n9wUC/oL9twQC/YL5twQCk7jfwAkC4eX1gA8CtNex6gMCyc6T9wUC14+13gcC6KaX6wkCr8Xa9wYCyo+x3gcCosWu9AYCx/yAgQgCwPy8gQgCosWi9AYCq9e56gMC/oLxtwQC4eXxgA8Ck7jTwAkCx/yEgQgC4uXpgA8Cyo+13gcC14+p3gcC6KaL6wkC76aX6wkC4eX5gA8C/oL1twQCk7jXwAkC76aT6wkCtNep6gMCosXa9wYC14+t3gcCr8Wi9AYCx/y8gQgCyc6L9wUC14+h3gcC5euWqgIC/oLptwQC2OueqgICrsKviwgCzM6X9wUCq9e16gMCyo+p3gcC4eXpgA8Ck7jLwAkCtNet6gMCyc6P9wUC4uXhgA8CwPyogQgC/oLttwQCk7jPwAkClrjbwAkCtNeh6gMCrsKr/gkCyc6D9wUC4uXlgA8C/YLxtwQC14+l3gcCosWm9AYC6KaD6wkC5euKqgIC6KaH6wkCr8WK9AYCwPzsgQgCrMWq9AYCk7iDwQkC76af6wkCyc7H9wUCtNfl6gMCtPew8AwCwJ/r5gwC75nRggMCpZ/ziwIT88F2032SM6rB31Besup/8NHqjQ=="/>
-</div>
-<table width="100%">
-<tr>
-<td>
-<link href="../Scripts/STYLE.css" rel="Stylesheet" type="text/css"/>
-<table bgcolor="#5B5EDE" width="100%">
-<tr>
-<td align="center" width="10%">
-<img id="StudentHeader1_Image1" src="../Images/DU_Logo.JPG" style="border-width:0px;"/>
 </td>
 <td align="center">
-<table width="100%">
-<tr>
-<td align="center">
-<span id="StudentHeader1_Label1" style="color:White;font-size:XX-Large;font-weight:bold;">University of Delhi</span>
-</td>
-</tr>
-<tr>
-<td align="center" class="style1">
-<span id="StudentHeader1_lblsubheading" style="color:White;font-size:Medium;font-weight:bold;">Results (Semester/Annual Examination Nov-Dec 2019 )</span>
+<span class="headings" id="lblcourse0">University of Delhi</span>
+<br/>
+<span class="lbl" id="lblheading" style="color:Maroon;">Semester Examination Nov-Dec 2019</span>
 </td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td bgcolor="#FFF1CC" colspan="2" width="100%">
+<td align="center" colspan="2">
+
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<span class="lbl" id="lblstatement" style="color:Maroon;">TRANSCRIPT</span>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+</td>
+</tr>
+<tr>
+<td width="25%">
+<span class="lblsmall" id="Label12">Exam Roll No.</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lblrollno">17067570007</span></td>
+</tr>
+<tr>
+<td>
+<span class="lblsmall" id="Label6">Name</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lblname">PARAG DUDEJA</span></td>
+</tr>
+<tr>
+<td>
+<span class="lblsmall" id="Label9">Course Name</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lblcourse">(CBCS) B.SC.(HONS.) COMPUTER SCIENCE</span></td>
+</tr>
+<tr>
+<td>
+<span class="lblsmall" id="Label13">Exam Sem</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lblsem">V</span><span class="lblsmall" id="lblsem_final"></span></td>
+</tr>
+<tr>
+<td>
+<span class="lblsmall" id="Label11">College Name</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lblcollege">Shaheed Sukhdev College of Business Studies</span></td>
+</tr>
+<tr>
+<td>
+<span class="lblsmall" id="Label14">Enrollment No.</span>
+</td>
+<td>
+                                            :<span class="lblsmall" id="lbleno" style="font-weight:bold;">Nill</span></td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
 <table width="100%">
 <tr>
 <td>
-<a href="#StudentHeader1_Menu1_SkipLink"><img alt="Skip Navigation Links" height="0" src="/WebResource.axd?d=kVbr06IbctdwJiSKb55vGGwJX9IfBox8vjccRin6eHnck1kAexbb4Zyls0g25eqvvdR24o0_8iFsqSEANvAJ304P7bA1&amp;t=636271869297880478" style="border-width:0px;" width="0"/></a><table border="0" cellpadding="0" cellspacing="0" class="StudentHeader1_Menu1_2" id="StudentHeader1_Menu1">
-<tr>
-<td id="StudentHeader1_Menu1n0" onkeyup="Menu_Key(event)" onmouseout="Menu_Unhover(this)" onmouseover="Menu_HoverStatic(this)"><table border="0" cellpadding="0" cellspacing="0" class="StudentHeader1_Menu1_4" width="100%">
-<tr>
-<td style="white-space:nowrap;"><a class="StudentHeader1_Menu1_1 StudentHeader1_Menu1_3" href="javascript:__doPostBack('StudentHeader1$Menu1','')"></a></td>
-</tr>
-</table></td><td style="width:3px;"></td><td><img alt="" src="../Images/menu_separator_first.GIF"/></td><td id="StudentHeader1_Menu1n1" onkeyup="Menu_Key(event)" onmouseout="Menu_Unhover(this)" onmouseover="Menu_HoverStatic(this)"><table border="0" cellpadding="0" cellspacing="0" class="StudentHeader1_Menu1_4" width="100%">
-<tr>
-<td style="white-space:nowrap;"><a class="StudentHeader1_Menu1_1 StudentHeader1_Menu1_3" href="Home.aspx">Home</a></td>
-</tr>
-</table></td><td style="width:3px;"></td><td><img alt="" src="../Images/menu_separator.gif"/></td><td id="StudentHeader1_Menu1n2" onkeyup="Menu_Key(event)" onmouseout="Menu_Unhover(this)" onmouseover="Menu_HoverStatic(this)"><table border="0" cellpadding="0" cellspacing="0" class="StudentHeader1_Menu1_4" width="100%">
-<tr>
-<td style="white-space:nowrap;"><a class="StudentHeader1_Menu1_1 StudentHeader1_Menu1_3" href="Combine_GradeCard.aspx">Statement of Marks</a></td>
-</tr>
-</table></td><td style="width:3px;"></td><td><img alt="" src="../Images/menu_separator_last.GIF"/></td><td id="StudentHeader1_Menu1n3" onkeyup="Menu_Key(event)" onmouseout="Menu_Unhover(this)" onmouseover="Menu_HoverStatic(this)"><table border="0" cellpadding="0" cellspacing="0" class="StudentHeader1_Menu1_4" width="100%">
-<tr>
-<td style="white-space:nowrap;"><a class="StudentHeader1_Menu1_1 StudentHeader1_Menu1_3" href="List_Of_Declared_Results.aspx">List of Declared Result</a></td>
-</tr>
-</table></td><td><img alt="" src="../Images/menu_separator_last.GIF"/></td>
-</tr>
-</table><a id="StudentHeader1_Menu1_SkipLink"></a>
-</td>
+                                             </td>
 <td align="right">
-                         </td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
+<span class="lblsmall" id="lblprintdate">Date of Printing: 24 Feb 2020</span>
 </td>
 </tr>
 <tr>
-<td>
-<table align="center" width="1000">
+<td colspan="2">
+<div>
+<table border="1" cellspacing="0" id="gvshow" rules="all" style="width:100%;border-collapse:collapse;">
+<tr style="font-size:10pt;">
+<th scope="col">Sr. No.</th><th scope="col">Paper Code</th><th scope="col" style="font-size:XX-Small;">Appearing Status</th><th scope="col">Paper Name</th><th scope="col">Paper Type</th><th scope="col">Sem</th><th scope="col" style="font-size:X-Small;">Credit</th><th scope="col" style="font-size:X-Small;">Grade Letter</th><th scope="col" style="font-size:X-Small;">Grade Point</th><th scope="col" style="font-size:X-Small;">Credit Point</th>
+</tr><tr>
+<td align="center" style="height:35px;">1</td><td align="center">32341101</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">PROGRAMMING FUNDAMENTALS USING C++</td><td align="center">CORE</td><td align="center">I</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">2</td><td align="center">32341102</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">COMPUTER SYSTEM ARCHITECTURE</td><td align="center">CORE</td><td align="center">I</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">3</td><td align="center">32375101</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">STATISTICAL METHODS</td><td align="center">GE</td><td align="center">I</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">4</td><td align="center">72032801</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">ENGLISH-A</td><td align="center">AECC</td><td align="center">I</td><td align="center" style="width:50px;">4</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">36</td>
+</tr><tr>
+<td align="center" style="height:35px;">5</td><td align="center">32341201</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">PROGRAMMING IN JAVA</td><td align="center">CORE</td><td align="center">II</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">6</td><td align="center">32341202</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">DISCRETE STRUCTURES</td><td align="center">CORE</td><td align="center">II</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">7</td><td align="center">32375201</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">INTRODUCTORY PROBABILITY</td><td align="center">GE</td><td align="center">II</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">8</td><td align="center">72182801</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">ENVIRONMENTAL SCIENCE</td><td align="center">AECC</td><td align="center">II</td><td align="center" style="width:50px;">4</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">36</td>
+</tr><tr>
+<td align="center" style="height:35px;">9</td><td align="center">32341301</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">DATA STRUCTURES</td><td align="center">CORE</td><td align="center">III</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">10</td><td align="center">32341302</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">OPERATING SYSTEMS</td><td align="center">CORE</td><td align="center">III</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">11</td><td align="center">32341303</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">COMPUTER NETWORKS</td><td align="center">CORE</td><td align="center">III</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">12</td><td align="center">32343305</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">ANDROID PROGRAMMING</td><td align="center">SEC</td><td align="center">III</td><td align="center" style="width:50px;">4</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">40</td>
+</tr><tr>
+<td align="center" style="height:35px;">13</td><td align="center">32355301</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">DIFFERENTIAL EQUATIONS</td><td align="center">GE</td><td align="center">III</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">14</td><td align="center">32341401</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">DESIGN AND ANALYSIS OF ALGORITHMS</td><td align="center">CORE</td><td align="center">IV</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">15</td><td align="center">32341402</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">SOFTWARE ENGINEERING</td><td align="center">CORE</td><td align="center">IV</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">16</td><td align="center">32341403</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">DATABASE MANAGEMENT SYSTEMS</td><td align="center">CORE</td><td align="center">IV</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">17</td><td align="center">32343406</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">PHP PROGRAMMING</td><td align="center">SEC</td><td align="center">IV</td><td align="center" style="width:50px;">4</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">40</td>
+</tr><tr>
+<td align="center" style="height:35px;">18</td><td align="center">32355402</td><td align="center">*</td><td align="left" style="font-size:XX-Small;">NUMERICAL METHODS</td><td align="center">GE</td><td align="center">IV</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">19</td><td align="center">32341501</td><td align="center"> </td><td align="left" style="font-size:XX-Small;">INTERNET TECHNOLOGIES (B.SC. (HONS) COMPUTER SCIENCE</td><td align="center">CORE</td><td align="center">V</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">20</td><td align="center">32341502</td><td align="center"> </td><td align="left" style="font-size:XX-Small;">THEORY OF COMPUTATION</td><td align="center">CORE</td><td align="center">V</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">O</td><td align="center" style="width:50px;">10</td><td align="center" style="width:50px;">60</td>
+</tr><tr>
+<td align="center" style="height:35px;">21</td><td align="center">32347503</td><td align="center"> </td><td align="left" style="font-size:XX-Small;">OPERATIONAL RESEARCH FOR COMPUTER SCIENCE</td><td align="center">DSE</td><td align="center">V</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr><tr>
+<td align="center" style="height:35px;">22</td><td align="center">32347504</td><td align="center"> </td><td align="left" style="font-size:XX-Small;">MICROPROCESSOR</td><td align="center">DSE</td><td align="center">V</td><td align="center" style="width:50px;">6</td><td align="center" style="width:50px;">A+</td><td align="center" style="width:50px;">9</td><td align="center" style="width:50px;">54</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+                             </td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<div>
+<table border="1" cellspacing="0" id="gv_sgpa" rules="all" style="width:100%;border-collapse:collapse;">
+<tr style="font-size:10pt;">
+<th scope="col">Sem</th><th scope="col" style="font-size:X-Small;">Total Credit</th><th scope="col" style="font-size:X-Small;">Total Credit Point</th><th scope="col">SGPA</th><th scope="col">Result</th><th scope="col">CGPA</th>
+</tr><tr>
+<td align="center">I</td><td align="center">22</td><td align="center">198</td><td align="center">9</td><td> </td><td align="center"></td>
+</tr><tr>
+<td align="center">II</td><td align="center">22</td><td align="center">204</td><td align="center">9.27</td><td>PASSED</td><td align="center">9.14</td>
+</tr><tr>
+<td align="center">III</td><td align="center">28</td><td align="center">268</td><td align="center">9.57</td><td> </td><td align="center"></td>
+</tr><tr>
+<td align="center">IV</td><td align="center">28</td><td align="center">274</td><td align="center">9.79</td><td>PASSED</td><td align="center">9.68</td>
+</tr><tr>
+<td align="center">V</td><td align="center">24</td><td align="center">222</td><td align="center">9.25</td><td> </td><td align="center"></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
 <tr>
 <td align="right" colspan="2">
-<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('SM1', document.getElementById('form1'));
-Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tUP1'], [], [], 90);
-//]]>
-</script>
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
-<span class="headings" id="Label15">Semester Examination</span>
-<span class="headings" id="lblexam_session"> (Nov-Dec 2019)</span>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<span class="headings" id="Label1" style="font-size:Medium;">Statement of Marks/Score Card</span>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img id="Image4" src="../Images/BlueLine.JPG" style="border-width:0px;"/>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<span class="lbl" id="lblmsg0" style="color:#CC0099;">Students are advised to save their Statement of Marks/Score Card for future purpose. <br/>This link will not be available later.</span>
-</td>
-</tr>
-<tr>
-<td align="center" class="style2" colspan="2">
-<img id="Image2" src="../Images/BlueLine.JPG" style="border-width:0px;"/>
-</td>
-</tr>
-<tr>
-<td class="style4">
-                             </td>
-<td class="style4">
-                             </td>
-</tr>
-<tr>
-<td class="style4">
-<span class="lbl" id="Label12">Please Select College Name</span>
-<span class="lbl" id="Label21" style="color:#FF3300;">*</span>
-</td>
-<td class="style4">
-<select class="txtbox" id="ddlcollege" name="ddlcollege" style="width:400px;">
-<option value="&lt;-----Select-----&gt;">&lt;-----Select-----&gt;</option>
-<option value="001">Acharya Narendra Dev College</option>
-<option value="332">Aditi Mahavidhlaya (Teaching Centre)</option>
-<option value="002">Aditi Mahavidyalaya</option>
-<option value="333">Aryabhatta College (Teaching Centre)</option>
-<option value="059">Aryabhatta College [Formerly Ram Lal Anand College (Evening)]</option>
-<option value="003">Atma Ram Sanatan Dharam College</option>
-<option value="007">Bhagini Nivedita College</option>
-<option value="335">Bhagini Nivedita College (Teaching Centre)</option>
-<option value="008">Bharati College</option>
-<option value="325">Bharati College - Teaching Centre</option>
-<option value="009">Bhaskaracharya College of Applied Sciences</option>
-<option value="309">CAMPUS LAW CENTRE</option>
-<option value="COL">Campus of Open Learning</option>
-<option value="312">Cluster Innovation Centre (C.I.C.)</option>
-<option value="013">College Of Vocational Studies</option>
-<option value="336">College of Vocational Studies (Teaching Centre)</option>
-<option value="014">Daulat Ram College</option>
-<option value="015">Deen Dayal Upadhyaya College</option>
-<option value="344">Deen Dayal Upadhyaya College (Teaching Centre)</option>
-<option value="016">Delhi College Of Arts &amp; Commerce</option>
-<option value="316">Delhi School of Journalism</option>
-<option value="225">Department of Adult Education</option>
-<option value="226">Department of African Studies</option>
-<option value="215">Department of Anthropology</option>
-<option value="201">Department of ARABIC</option>
-<option value="290">Department of B.A (Programme Committee) Application Course-III Foundation Course-II</option>
-<option value="258">Department of Bio Medical Research</option>
-<option value="249">Department of Bio-chemistry</option>
-<option value="216">Department of Botany</option>
-<option value="202">Department of Buddhist Studies</option>
-<option value="248">Department of Business Economics</option>
-<option value="217">Department of Chemistry</option>
-<option value="238">Department of CLC</option>
-<option value="241">Department of Commerce</option>
-<option value="234">Department of Computer Science</option>
-<option value="228">Department of East Asian Studies</option>
-<option value="227">Department of Economics</option>
-<option value="243">Department of Education (C.I.E.)</option>
-<option value="251">Department of Electronics</option>
-<option value="203">Department of English</option>
-<option value="218">Department of Environmental Studies</option>
-<option value="101">Department of Faculty of Applied Social Sciences &amp; Humanities</option>
-<option value="114">Department of Faculty of Science</option>
-<option value="252">Department of Genetics</option>
-<option value="229">Department of Geography</option>
-<option value="219">Department of Geology</option>
-<option value="204">Department of Germanic and Romance Studies</option>
-<option value="205">Department of Hindi</option>
-<option value="231">Department of History</option>
-<option value="291">Department of History (SDC)</option>
-<option value="220">Department of Home Science</option>
-<option value="255">Department of Indira Gandhi Institute of Physical Education and Sports Science</option>
-<option value="107">Department of Inter-Disciplinary And Applied Sciences</option>
-<option value="239">Department of LC-I</option>
-<option value="206">Department of Library and Information Science</option>
-<option value="207">Department of Linguistics</option>
-<option value="235">Department of Mathematics</option>
-<option value="253">Department of Microbiology</option>
-<option value="208">Department of MIL&amp; LS</option>
-<option value="240">Department of Music</option>
-<option value="236">Department of Operational Research</option>
-<option value="209">Department of Persian</option>
-<option value="210">Department of Philosophy</option>
-<option value="349">Department of Philosophy (SDC)</option>
-<option value="222">Department of Physics</option>
-<option value="232">Department of Political Science</option>
-<option value="211">Department of Psychology</option>
-<option value="212">Department of Punjabi</option>
-<option value="213">Department of Sanskrit</option>
-<option value="242">Department of Slavonic And Finno-Ugrian Studies</option>
-<option value="115">Department of Social Sciences</option>
-<option value="233">Department of Social Work</option>
-<option value="230">Department of Sociology</option>
-<option value="237">Department of Statistics</option>
-<option value="214">Department of Urdu</option>
-<option value="223">Department of Zoology</option>
-<option value="019">Deshbandhu College (Day)</option>
-<option value="334">Dr. B.R. Ambedkar (Teaching Centre)</option>
-<option value="318">Dr. B.R. Ambedkar Center for Biomedical Research</option>
-<option value="010">Dr. Bhim Rao Ambedkar College</option>
-<option value="314">Durgabai Deshmukh College of Special Education (V.I.)</option>
-<option value="021">Dyal Singh College (Day)</option>
-<option value="022">Dyal Singh College (Eve)</option>
-<option value="109">Faculty of Management Studies</option>
-<option value="024">Gargi College</option>
-<option value="025">Hans Raj College</option>
-<option value="331">Hans Raj College - Teaching Centre</option>
-<option value="026">Hindu College</option>
-<option value="029">I.P.College For Women</option>
-<option value="028">Indira Gandhi Institute of Phy. Edu. &amp; Sports Sciences</option>
-<option value="317">Institute of Cyber Security and Law (I.C.S.L.)</option>
-<option value="030">Institute Of Home Economics</option>
-<option value="031">Janki Devi Memorial College</option>
-<option value="322">Janki Devi Memorial College - Teaching Centre</option>
-<option value="032">Jesus &amp; Mary College</option>
-<option value="326">Jesus &amp; Mary College - Teaching Centre</option>
-<option value="306">Jubilee Hall</option>
-<option value="033">Kalindi College</option>
-<option value="323">Kalindi College - Teaching Centre</option>
-<option value="034">Kamla Nehru College</option>
-<option value="337">Keshav Mahavidlaya (Teaching Centre)</option>
-<option value="035">Keshav Mahavidyalaya</option>
-<option value="036">Kirori Mal College</option>
-<option value="038">Lady Irwin College</option>
-<option value="039">Lady Shri Ram College for Women</option>
-<option value="040">Lakshmibai College</option>
-<option value="328">Lakshmibai College - Teaching Centre</option>
-<option value="310">LAW CENTRE-I</option>
-<option value="311">LAW CENTRE-II</option>
-<option value="041">Maharaja Agrasen College</option>
-<option value="320">Maharaja Agrasen College - Teaching Centre</option>
-<option value="315">Maharshi Valmiki College of Education</option>
-<option value="043">Maitreyi College</option>
-<option value="327">Maitreyi College - Teaching Centre</option>
-<option value="044">Mata Sundri College For Women</option>
-<option value="321">Mata Sundri College For Women - Teaching Centre</option>
-<option value="047">Miranda House</option>
-<option value="338">Miranda House (Teaching Centre)</option>
-<option value="048">Moti Lal Nehru College (Day)</option>
-<option value="049">Moti Lal Nehru College (Eve)</option>
-<option value="339">Moti Lal Nehru College (Teaching Centre)</option>
-<option value="307">Non Collegiate Women Education Board (NCWEB)</option>
-<option value="053">P.G.D.A.V. College (Day)</option>
-<option value="054">P.G.D.A.V. College (Eve)</option>
-<option value="329">P.G.D.A.V. College - Teaching Centre</option>
-<option value="055">Rajdhani College</option>
-<option value="340">Rajdhani College (Teaching Centre)</option>
-<option value="058">Ram Lal Anand College (Day)</option>
-<option value="020">Ramanujan College</option>
-<option value="341">Ramanujan College (Teaching Centre)</option>
-<option value="056">Ramjas College</option>
-<option value="068">S.G.T.B. Khalsa College</option>
-<option value="062">Satyawati College (Day)</option>
-<option value="063">Satyawati College (Eve)</option>
-<option value="342">Satyawati College (Teaching Centre)</option>
-<option value="SOL">School of Open Learning</option>
-<option value="346">School of Open Learning (North Female)</option>
-<option value="345">School of Open Learning (North Male)</option>
-<option value="348">School of Open Learning (South Female)</option>
-<option value="347">School of Open Learning (South Male)</option>
-<option value="064">Shaheed Bhagat Singh College (Day)</option>
-<option value="065">Shaheed Bhagat Singh College (Eve)</option>
-<option value="066">Shaheed Rajguru College of Applied Sciences for Women</option>
-<option value="067">Shaheed Sukhdev College of Business Studies</option>
-<option value="071">Shivaji College</option>
-<option value="073">Shyam Lal College (Day)</option>
-<option value="074">Shyam Lal College (Eve)</option>
-<option value="324">Shyama Prasad Mukherjee College - Teaching Centre</option>
-<option value="075">Shyama Prasad Mukherji College for Women</option>
-<option value="SOLS">SOL Study Center South</option>
-<option value="076">Sri Aurobindo College (Day)</option>
-<option value="077">Sri Aurobindo College (Eve)</option>
-<option value="343">Sri Aurobindo College (Teaching Centre)</option>
-<option value="078">Sri Guru Gobind Singh College Of Commerce</option>
-<option value="330">Sri Guru Gobind Singh College Of Commerce - Teaching Centre</option>
-<option value="069">Sri Guru Nanak Dev Khalsa College</option>
-<option value="072">Sri Ram College Of Commerce</option>
-<option value="079">Sri Venkateswara College</option>
-<option value="080">St. Stephens College</option>
-<option value="081">Swami Shraddhanand College</option>
-<option value="100">University of Delhi</option>
-<option value="084">Vivekananda College</option>
-<option value="319">Vivekananda College - Teaching Centre</option>
-<option value="086">Zakir Husain College (Eve)</option>
-<option value="085">Zakir Husain Delhi College (Day)</option>
-</select>
-</td>
-</tr>
-<tr>
-<td class="style4">
-<span class="lbl" id="Label2">Please Fill Exam Roll No.</span>
-<span class="lbl" id="Label28" style="color:#FF3300;">*</span>
-</td>
-<td class="style4">
-<input class="txtbox" id="txtrollno" maxlength="11" name="txtrollno" style="width:200px;" type="text"/>
-</td>
-</tr>
-<tr>
-<td class="style4">
-                             </td>
-<td class="style4">
-                             </td>
-</tr>
-<tr>
-<td class="style4">
-                             </td>
-<td class="style4">
-<div id="UP1">
-<table class="mainTable">
-<tr>
-<td colspan="2">
-<span class="lbl" id="Label32">Captch Code</span>
-</td>
-</tr>
-<tr>
-<td class="style2" height:="" width="100" width:100px="">
-<img id="imgCaptcha" src="GenerateCaptcha.aspx?CaptchaCode=562335&amp;DateTime=637181068680259024" style="border-width:0px;"/>
-</td>
-<td class="style3" valign="top">
-<input id="btnRefresh" name="btnRefresh" style="height:30px;" type="submit" value="Refresh Code"/>
-</td>
-</tr>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td class="style4">
-<span class="lbl" id="Label31">Please Type Captcha Code</span>
-<span class="lbl" id="Label33" style="color:#FF3300;">*</span>
-</td>
-<td class="style4">
-<input class="txtbox" id="txtcaptcha" name="txtcaptcha" style="width:200px;" type="text"/>
-</td>
-</tr>
-<tr>
-<td align="center" class="style4" colspan="2">
-                             </td>
-</tr>
-<tr>
-<td align="center" class="style4" colspan="2">
-<input class="button" id="btnsearch" name="btnsearch" style="height:20px;" type="submit" value="Print Score Card"/>
 </td>
 </tr>
 <tr>
@@ -399,64 +211,65 @@ Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tUP1'], [], [], 
 </tr>
 <tr>
 <td colspan="2">
-<span class="lbl" id="Label30" style="color:#FF3300;">*</span>
-                            : Mandatory Fields</td>
+                                             </td>
 </tr>
 <tr>
 <td colspan="2">
-                             </td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img id="Image3" src="../Images/BlueLine.JPG" style="border-width:0px;"/>
+<b>
+<span class="lbl" id="lbl_note0"><b>Abbreviations:</b> </span>
+</b>
+<span id="lblabbreviation">O: Outstanding; A+: Excellent; A: Very Good; B+: Good; B: Above Average; C: Average; D: Pass; F: Fail; AB: Absent; NA: Not Available, *: Already Appeared;</span>
 </td>
 </tr>
 <tr>
-<td>
-</td>
-<td align="right">
-                             </td>
+<td colspan="2">
+                                             </td>
 </tr>
-</table>
+<tr>
+<td colspan="2">
+<span class="lbl" id="lbl_note">Note: </span>
+<span id="lblnotice">[1] This is web-based transcript. This  is valid for all official purpose. Students are  advised to get this transcript duly authenticated by the principal of the college.<br/>[2] Student obtaining Grade F or AB shall be considered failed in that paper/subject and be required to reappear in the examination as per examination cycle.<br/>[3] <b>Student has to pass the ER to become eligible for degree as per examination cycle and span period.</b><br/>[4] <b>Final Percentage of marks (%)=C.G.P.A. based on all six semesters X 9.5</b></span>
 <br/>
 </td>
 </tr>
 <tr>
+<td align="right" colspan="2">
+<table width="100%">
+<tr>
 <td>
-<link href="../Scripts/STYLE.css" rel="Stylesheet" type="text/css"/>
-<table bgcolor="#5B5EDE" width="100%">
-<tr>
-<td align="center">
-<span class="lbl" id="Student_Footer1_lblmsg0" style="color:#F7F6F3;font-size:Small;font-weight:bold;">University of Delhi (Compatible Browser: mozilla firefox)</span>
+<span class="lbl" id="lblrslt_date" style="font-size:X-Small;">Date of Result Declaration: 03/02/2020</span>
+<br/>
+</td>
+<td align="center" width="25%">
+
+<br/>
+<span class="lbl" id="lblrsltdate1" style="font-size:X-Small;">Dean (Examinations)</span>
+</td>
+</tr>
+</table>
 </td>
 </tr>
 <tr>
-<td align="center" bgcolor="#ffcc99">
-<span class="lbl" id="Student_Footer1_lblmsg" style="color:#0066FF;font-size:Small;font-weight:bold;">(For any query related to results, students are advised to contact window no.7 of examination branch North Campus on any working day between 9.00am to 5.00pm.)</span>
+<td align="center" colspan="2">
+
 </td>
 </tr>
 <tr>
-<td align="center" bgcolor="5B5EDE">
-             </td>
+<td align="left" colspan="2">
+<span class="lbl" id="lbl_sub_head3">Disclaimer: </span>
+<span id="lbldisclaimer">[1] The result displayed on university website is subject to correction, if any discrepancy is noticed at any point of time.<br/>[2] Students should immediately contact examination branch if there is any discrepancy in the above result at Window No.-7 (between 9.30am and 3.00pm), New Examination Building (North Campus) and Window No.-7 (South Campus) within one month after the declaration of the result.<br/>[3] Discrepancy related to AECC and SEC papers, students are advised to contact the office of the principal of the college.</span>
+</td>
 </tr>
 </table>
 </td>
 </tr>
 </table>
-<script type="text/javascript">
-//<![CDATA[
-var StudentHeader1_Menu1_Data = new Object();
-StudentHeader1_Menu1_Data.disappearAfter = 500;
-StudentHeader1_Menu1_Data.horizontalOffset = 2;
-StudentHeader1_Menu1_Data.verticalOffset = 0;
-StudentHeader1_Menu1_Data.hoverClass = 'StudentHeader1_Menu1_15';
-StudentHeader1_Menu1_Data.hoverHyperLinkClass = 'StudentHeader1_Menu1_14';
-StudentHeader1_Menu1_Data.staticHoverClass = 'StudentHeader1_Menu1_13';
-StudentHeader1_Menu1_Data.staticHoverHyperLinkClass = 'StudentHeader1_Menu1_12';
-StudentHeader1_Menu1_Data.iframeUrl = '/WebResource.axd?d=Ahz49oJK-H_a9y3D2lTFTYuqRkAWZCzOrpK4a2YdkFv87qOk-FZrxhzEzJw9LlerKYGXDCcbRTSqqw6F1sqhiSDAaaQ1&t=636271869297880478';
-Sys.Application.initialize();
-//]]>
-</script>
+<table align="center" id="Table2">
+<tr>
+<td align="center" class="style1"> <a href="Combine_GradeCard.aspx">
+</a> </td>
+</tr>
+</table>
 </form>
 </body>
 </html>
