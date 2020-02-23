@@ -1,4 +1,4 @@
-## First run the following commands on terminal : 
+## First run the following commands on terminal to install required packages : 
 
 * sudo apt-get update && sudo apt-get upgrade
 * sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
