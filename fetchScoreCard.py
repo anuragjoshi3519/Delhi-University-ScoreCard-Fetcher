@@ -44,7 +44,7 @@ def main():
 
     sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     
-    if keep_running=='y':
+    if keep_running.lower()=='y':
         subject = input("\n\nEnter Course Name : ")
     else:
         subject=''
@@ -64,7 +64,7 @@ def main():
         
         rollNo = input("Enter roll no.: ")
         
-        if keep_running=='y':
+        if keep_running.lower()=='y':
             choiceMail = 'y'
         else:
             choiceMail = input("Email result pdf? (Y/n): ")

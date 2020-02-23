@@ -113,7 +113,7 @@ def isResultOut(subject, sem):
                 return True
     except:
         
-        print('Error occurred in fetching result. Retrying...')
+        #print('Error occurred in fetching result. Retrying...')
         return False
 
     return False
