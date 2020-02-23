@@ -8,13 +8,7 @@
 * sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev && sudo apt-get install python-lxml
 
 * sudo apt-get install python3-pip
-* pip3 install pdfkit
-* pip3 install pytesseract
-* pip3 install requests
-* pip3 install bs4
-* pip3 install Pillow
-* pip3 install lxml
-* pip3 install email
+* pip3 install pdfkit pytesseract requests bs4 lxml
 
 
 _# make sure you have python3.x and pip installed on your system_
