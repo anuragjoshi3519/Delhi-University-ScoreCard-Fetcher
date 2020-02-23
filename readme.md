@@ -1,19 +1,18 @@
 ## First run the following commands on terminal to install required packages : 
 
-* sudo apt-get update && sudo apt-get upgrade
-* sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
-* sudo dpkg -i wkhtmltox_0.12.1.3-1~bionic_amd64.deb
-* sudo apt-get install -f
-* sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
-* sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev && sudo apt-get install python-lxml
+sudo apt-get update && sudo apt-get upgrade
+sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+sudo apt-get install -f
+sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
+sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev && sudo apt-get install python-lxml
 
-* sudo apt-get install python3-pip
-* pip3 install pdfkit
-* pip3 install pytesseract
-* pip3 install requests
-* pip3 install bs4 
-* pip3 install lxml
-
+sudo apt-get install python3-pip
+pip3 install pdfkit
+pip3 install pytesseract
+pip3 install requests
+pip3 install bs4 
+pip3 install lxml
 
 _# make sure you have python3.x installed on your system_
 
