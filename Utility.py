@@ -20,7 +20,7 @@ def connect():
         
         try:
             response = request.get(url,headers=header)
-            soup = BeautifulSoup(response.text,'lxml')
+            soup = BeautifulSoup(response.text,'html.parser')
 
             #Bypassing Captcha
             #-----------------
@@ -60,7 +60,7 @@ def fetchGradeCard(clgCode,rollno):
     try:
         
         result = requests.post(url, data=form_data,headers=header)
-        result = BeautifulSoup(result.text,'lxml')
+        result = BeautifulSoup(result.text,'html.parser')
          
         while len(result.body.findAll(text=re.compile('^Sorry! Invalid captch code.$')))!=0:
             form_data = connect()
@@ -95,7 +95,7 @@ def isResultOut(subject, sem):
         url='https://duresult.in/students/List_Of_Declared_Results.aspx'
         headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
         response = requests.get(url,headers=headers)
-        soup = BeautifulSoup(response.text,'lxml')
+        soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
         
         subject = ''.join([s for s in subject if s.isalnum()])
@@ -123,7 +123,7 @@ def printClgCodes():
     
     try:
         response = requests.get(url,headers=header)
-        soup = BeautifulSoup(response.text,'lxml')
+        soup = BeautifulSoup(response.text,'html.parser')
 
         s=soup.find('select',{'id':'ddlcollege'})
         items=s.find_all('option')[1:]
