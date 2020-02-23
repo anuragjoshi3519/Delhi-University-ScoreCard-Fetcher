@@ -15,7 +15,7 @@
 * pip3 install lxml
 
 
-_# make sure you have python3.x and pip installed on your system_
+_# make sure you have python3.x installed on your system_
 
 ## To run the program:
 
