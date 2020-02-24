@@ -45,7 +45,7 @@ def main():
     sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     
     if keep_running.lower()=='y':
-        subject = input("\n\nEnter Course Name : ")
+        subject = input("\nEnter Course Name : ")
     else:
         subject=''
         
@@ -57,22 +57,22 @@ def main():
             print('Please enter in range (1-6). Try again.')
             continue
 
-    clgCode = input("Enter College Code : ")
-    choice = input("Enter 'A': To fetch your result.\nEnter 'B': To fetch multiple results. \n(Enter any other key to exit.): ")
+    clgCode = input("\nEnter College Code : ")
+    choice = input("\nEnter 'A': To fetch your result.\nEnter 'B': To fetch multiple results. \n(Enter any other key to exit.): ")
     
     if choice.lower()=='a':
         
-        rollNo = input("Enter roll no.: ")
+        rollNo = input("\nEnter roll no.: ")
         
         if keep_running.lower()=='y':
             choiceMail = 'y'
         else:
-            choiceMail = input("Email result pdf? (Y/n): ")
+            choiceMail = input("\nEmail result pdf? (Y/n): ")
             
         if choiceMail.lower() == 'y':
-            email_from = input("Enter your mail id: ")
-            email_pass = getpass.getpass("Enter your password: ")
-            email_to = input("Enter recipient mail id: ")
+            email_from = input("\nEnter your mail id: ")
+            email_pass = getpass.getpass("\nEnter your password: ")
+            email_to = input("\nEnter recipient mail id: ")
             
             print("\n\nProcessing...\n")
             getResult(subject, sem, clgCode, rollNo, email_from, email_pass, email_to)
@@ -83,8 +83,8 @@ def main():
         print('Done')
         
     elif choice.lower()=='b':
-        start = int(input("Enter starting roll no.: "))
-        end = int(input("Enter ending roll no.: "))
+        start = int(input("\nEnter starting roll no.: "))
+        end = int(input("\nEnter ending roll no.: "))
         
         print("\n\nProcessing...\n")
         downloadAllResult(subject, sem, clgCode, list(range(start,end+1)) )

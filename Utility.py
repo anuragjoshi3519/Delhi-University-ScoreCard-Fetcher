@@ -74,9 +74,6 @@ def fetchGradeCard(clgCode,rollno):
         
         for img in result.findAll('img'):
             img.decompose()
-        
-        nonBreakSpace = u'\xa0'
-        result = result.replace(nonBreakSpace, ' ')
             
         if not os.path.isdir('Results_pdf'):
             os.mkdir('Results_pdf')
@@ -85,8 +82,19 @@ def fetchGradeCard(clgCode,rollno):
 
         with open('data/page.html','w') as f:
             f.write(str(result))
-            
-        pdfkit.from_file('data/page.html',filepath)
+
+        options = {
+            'quiet': '',
+            'encoding': "UTF-8",
+            'print-media-type': '',
+            'page-size': 'A4',
+            'margin-top': '5mm',
+            'margin-bottom': '5mm',
+            'margin-left': '5mm',
+            'margin-right': '5mm',
+            'zoom': '1.5'
+        }    
+        pdfkit.from_file('data/page.html',filepath,options=options)
         
     except:
         return 0
