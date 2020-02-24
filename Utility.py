@@ -67,13 +67,16 @@ def fetchGradeCard(clgCode,rollno):
             form_data['ddlcollege']=str(clgCode)
             form_data['txtrollno']=str(rollno)
             result = requests.post(url, data=form_data,headers=header)
-            result = BeautifulSoup(result.text,'lxml')
+            result = BeautifulSoup(result.text,'html.parser')
             
         if len(result.body.findAll(text=re.compile('^Sorry! no record found.$')))!=0: 
             return 1
         
         for img in result.findAll('img'):
             img.decompose()
+        
+        nonBreakSpace = u'\xa0'
+        result = result.replace(nonBreakSpace, ' ')
             
         if not os.path.isdir('Results_pdf'):
             os.mkdir('Results_pdf')
