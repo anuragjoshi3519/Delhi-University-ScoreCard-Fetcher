@@ -29,7 +29,7 @@ _# make sure you have python3.x installed on your system_
 
    _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
 3. Check your college code by running:- $ python3 printClgCodes.py
-4. Run 'fetchScoreCard.py' and start fetching:- $ python3 fetchScoreCard.py
+4. Run the program and start fetching:- $ python3 fetchScoreCard.py
 
 
 
