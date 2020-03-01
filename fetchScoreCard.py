@@ -3,7 +3,7 @@ import os
 import getpass
 
 from SendMail import sendMail
-from Utility import printClgCodes, connect, fetchGradeCard, isResultOut
+from Utility import printClgCodes, connect, fetchGradeCard, isResultOut, getClgCodes
 
 def downloadAllResult(subject,sem, clgCode, rollNoList):
     
@@ -45,7 +45,7 @@ def main():
     sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     
     if keep_running.lower()=='y':
-        subject = input("\nEnter Course Name : ")
+        subject = input("\nEnter Course Name : ").lower()
     else:
         subject=''
         
@@ -57,7 +57,13 @@ def main():
             print('Please enter in range (1-6). Try again.')
             continue
 
-    clgCode = input("\nEnter College Code : ")
+    while True:
+        clgCode = input("\nEnter College Code : ")
+        if clgCode in getClgCodes():
+            break
+        else:
+            print('Please enter a valid college code.') 
+    
     choice = input("\nEnter 'A': To fetch your result.\nEnter 'B': To fetch multiple results. \n(Enter any other key to exit.): ")
     
     if choice.lower()=='a':

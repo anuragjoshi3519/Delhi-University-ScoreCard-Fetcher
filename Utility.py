@@ -8,10 +8,10 @@ import os
 from bs4 import BeautifulSoup
 
 
-url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-
 def connect():
+    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
+    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+
     if not os.path.isdir('data'):
         os.mkdir('data')
     with requests.Session() as request:
@@ -52,6 +52,9 @@ def connect():
 
 
 def fetchGradeCard(clgCode,rollno):
+
+    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
+    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
 
     form_data = connect()
     form_data['ddlcollege']=str(clgCode)
@@ -131,7 +134,9 @@ def isResultOut(subject, sem):
 
 
 def printClgCodes():
-    
+    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
+    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+
     try:
         response = requests.get(url,headers=header)
         soup = BeautifulSoup(response.text,'html.parser')
@@ -148,3 +153,20 @@ def printClgCodes():
     
     except:
         print('Error in printing!')
+
+def getClgCodes():
+    
+    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
+    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+
+    try:
+        response = requests.get(url,headers=header)
+        soup = BeautifulSoup(response.text,'html.parser')
+
+        s=soup.find('select',{'id':'ddlcollege'})
+        items=s.find_all('option')[1:]
+        clgCode = [item.get('value') for item in items]
+        return clgCode
+    
+    except:
+        print('Error!')
