@@ -1,3 +1,20 @@
+# About
+
+Are you tired of waiting and checking if your semesters' results are out?
+
+No need to do any of that now. 
+
+Just run a single python script and relax. The script will do all the necessary things to make sure your result is e-mailed to you as soon as it declares.
+
+# Features
+
+1. DU ScoreCard Fetcher can be used for fetching single as well as multiple result scorecards PDF.
+2. Any student belonging to any course or any college in Delhi University can use it to fetch results. 
+3. You can opt to get your result PDF downloaded in your system and by email too.
+4. You can even keep the script running, in your local or remote server, until the results are out (and you will be notified by an email once they are out )
+
+# How to use?
+
 ## First run the following commands on terminal to install required packages : 
 
 1. sudo apt-get update
@@ -6,11 +23,11 @@
 4. sudo apt-get install -f
 5. sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 6. sudo apt-get install python3-pip
-7. pip install -r requirements.txt
+7. pip3 install -r requirements.txt
 
-_# make sure you have python3.x installed on your system_
+*_# make sure you have python3.x installed on your system_*
 
-## To run the program:
+## Now to run the program:
 
 1. First clone the repository
 2. Using terminal, head the cloned folder
