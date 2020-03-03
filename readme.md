@@ -1,4 +1,4 @@
-# About
+## About
 
 Are you tired of waiting and checking if your semesters' results are out?
 
@@ -6,16 +6,16 @@ No need to do any of that now.
 
 Just run a single python script and relax. The script will do all the necessary things to make sure your result is e-mailed to you as soon as it declares.
 
-# Features
+## Features
 
 1. DU ScoreCard Fetcher can be used for fetching single as well as multiple result scorecards PDF.
 2. Any student belonging to any course or any college in Delhi University can use it to fetch results. 
 3. You can opt to get your result PDF downloaded in your system and by email too.
 4. You can even keep the script running, in your local or remote server, until the results are out (and you will be notified by an email once they are out )
 
-# How to use?
+## How to use?
 
-## First run the following commands on terminal to install required packages : 
+### First run the following commands on terminal to install required packages : 
 
 1. sudo apt-get update
 2. sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
@@ -27,7 +27,7 @@ Just run a single python script and relax. The script will do all the necessary 
 
 *_# make sure you have python3.x installed on your system_*
 
-## Now to run the program:
+### Now to run the program:
 
 1. First clone the repository
 2. Using terminal, head the cloned folder
