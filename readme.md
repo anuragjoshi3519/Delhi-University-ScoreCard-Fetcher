@@ -1,4 +1,4 @@
-## <u>About<u>
+## About
 
 Are you tired of waiting and checking if your semesters' results are out?
 
