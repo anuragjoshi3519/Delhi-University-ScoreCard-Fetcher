@@ -76,9 +76,9 @@ def main():
             choiceMail = input("\nEmail result pdf? (Y/n): ")
             
         if choiceMail.lower() == 'y':
-            email_from = input("\nEnter your mail id: ")
+            email_from = input("\nEnter sender's gmail id: ")
             email_pass = getpass.getpass("\nEnter your password: ")
-            email_to = input("\nEnter recipient mail id: ")
+            email_to = input("\nEnter recipient's email id: ")
             
             print("\n\nProcessing...\n")
             getResult(subject, sem, clgCode, rollNo, email_from, email_pass, email_to)
