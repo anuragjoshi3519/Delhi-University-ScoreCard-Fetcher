@@ -6,8 +6,6 @@ import pytesseract
 import pdfkit
 import os
 from bs4 import BeautifulSoup
-import sys
-sys.getdefaultencoding()
 
 
 def connect():

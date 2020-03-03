@@ -31,5 +31,7 @@ _# make sure you have python3.x installed on your system_
 3. Check your college code by running:- $ python3 printClgCodes.py
 4. Run the program and start fetching:- $ python3 fetchScoreCard.py
 
+*_Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._*
+
 
 
