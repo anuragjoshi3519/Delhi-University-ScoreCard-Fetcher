@@ -1,10 +1,10 @@
 ## About
 
-Are you tired of waiting and checking if your semesters' results are out?
+Are you tired of waiting and checking if your semesters' results are out? :hourglass_flowing_sand: :disappointed_relieved:
 
-No need to do any of that now. 
+No need to do any of that now. Just run a single python script and relax. :relieved:
 
-Just run a single python script and relax. The script will do all the necessary things to make sure your result is e-mailed to you as soon as it declares.
+The script will do all the necessary things to make sure your result is e-mailed to you as soon as it declares. :heavy_check_mark:
 
 ## Features
 
