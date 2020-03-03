@@ -23,18 +23,18 @@ Just run a single python script and relax. The script will do all the necessary 
 4. sudo apt-get install -f
 5. sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 6. sudo apt-get install python3-pip
-7. pip3 install -r requirements.txt
 
 *_# make sure you have python3.x installed on your system_*
 
 ### Now to run the program:
 
 1. First clone the repository
-2. Using terminal, head the cloned folder
+2. Using terminal, go the cloned folder
 
    _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
-3. Check your college code by running:- $ python3 printClgCodes.py
-4. Run the program and start fetching:- $ python3 fetchScoreCard.py
+3. Run:- $ pip3 install -r requirements.txt   
+4. Check your college code by running:- $ python3 printClgCodes.py
+5. Run this script and start fetching:- $ python3 fetchScoreCard.py
 
 *_Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._*
 
