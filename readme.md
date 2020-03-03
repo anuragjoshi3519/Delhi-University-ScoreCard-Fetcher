@@ -24,7 +24,7 @@ Just run a single python script and relax. The script will do all the necessary 
 5. sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 6. sudo apt-get install python3-pip
 
-*_~ Make sure you have python3.x installed on your system_*
+_Make sure you have python3.x installed on your system_
 
 ### Now to run the program:
 
