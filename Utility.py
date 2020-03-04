@@ -111,8 +111,7 @@ def isResultOut(subject, sem):
         response = requests.get(url,headers=headers)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
-        if subject=='':
-            sem=''
+
         subject = ''.join([s for s in subject if s.isalnum()])
 
         course = []
@@ -123,15 +122,21 @@ def isResultOut(subject, sem):
     
         course_sem_dict = dict(zip(course,semester))    
 
-        for course,semester in course_sem_dict.items():
-            if (subject in course) and (semester.lower()==sem.lower()) :
+        if subject!='':
+            flag=0
+            for course,semester in course_sem_dict.items():
+                if (subject in course) and (sem.lower() == semester.lower()) :
+                    flag=1
+            if flag==1:
                 return True
+            else:
+                return False
+        return True
+    
     except:
         
         #print('Error occurred in fetching result. Retrying...')
         return False
-
-    return False
 
 
 def printClgCodes():

@@ -26,7 +26,7 @@ def getResult(subject, sem, clgCode, rollNo, email_from='', email_pass='', email
             filepath = fetchGradeCard(clgCode, rollNo)
 
             if filepath==1:
-                print('Your result is not out yet.')
+                print('Sorry, No record found in database. Please try again later.')
             elif filepath!=0 and email_from!='':
                 sendMail(email_from, email_pass, email_to, filepath) 
             elif filepath!=0 and email_from=='':
@@ -36,7 +36,7 @@ def getResult(subject, sem, clgCode, rollNo, email_from='', email_pass='', email
             
             break
         else:
-            time.sleep(60)  
+            time.sleep(60)
             
 def main():
 
@@ -46,16 +46,17 @@ def main():
     
     if keep_running.lower()=='y':
         subject = input("\nEnter Course Name : ").lower()
+        while True:
+            try:
+                sem = sem_encodings[int(input("\nEnter Semester: "))]
+                break
+            except:
+                print('Please enter in range (1-6). Try again.')
+                continue
     else:
         subject=''
+        sem=''
         
-    while True:
-        try:
-            sem = sem_encodings[int(input("\nEnter Semester: "))]
-            break
-        except:
-            print('Please enter in range (1-6). Try again.')
-            continue
 
     while True:
         clgCode = input("\nEnter College Code : ")
