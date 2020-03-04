@@ -22,7 +22,7 @@ def getResult(subject, sem, clgCode, rollNo, email_from='', email_pass='', email
         
     while True:
         if isResultOut(subject,sem):
-            
+
             filepath = fetchGradeCard(clgCode, rollNo)
 
             if filepath==1:

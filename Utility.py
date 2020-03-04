@@ -111,7 +111,8 @@ def isResultOut(subject, sem):
         response = requests.get(url,headers=headers)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
-        
+        if subject=='':
+            sem=''
         subject = ''.join([s for s in subject if s.isalnum()])
 
         course = []
