@@ -37,8 +37,9 @@ _Make sure to allow gmail [less secure apps](https://myaccount.google.com/lessse
 
 
 **Note :**
-_To check College codes, run :-  *python3 printClgCodes.py*_
 
-_To check all courses names, run :-   *python3 printCourseNames.py*_*
+To check all **college codes**, run :-  *python3 printClgCodes.py*
+
+To check all **courses names**, run :-   *python3 printCourseNames.py*
 
 
