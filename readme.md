@@ -30,13 +30,12 @@ _Make sure you have python3.x installed on your system_
 
 1. First clone the repository
 2. Using terminal, go the cloned folder
-
-   _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
 3. Run:-  *pip3 install -r requirements.txt*
 
 
 _To check College codes :-  *python3 printClgCodes.py*_
-_To check Course names :-   *python3 printCourseNames.py*_
+
+_To check all courses names :-   *python3 printCourseNames.py*_
 
 4. Run this script and start fetching:-  *python3 fetchScoreCard.py*
 
