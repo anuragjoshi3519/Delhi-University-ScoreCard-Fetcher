@@ -5,6 +5,7 @@ from PIL import Image
 import pytesseract
 import pdfkit
 import os
+import pickle
 from bs4 import BeautifulSoup
 
 
@@ -162,17 +163,7 @@ def printClgCodes():
 
 def getClgCodes():
     
-    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-
-    try:
-        response = requests.get(url,headers=header)
-        soup = BeautifulSoup(response.text,'html.parser')
-
-        s=soup.find('select',{'id':'ddlcollege'})
-        items=s.find_all('option')[1:]
-        clgCode = [item.get('value') for item in items]
-        return clgCode
-    
-    except:
-        print('Error!')
+    with open('Resources/collegeCodes','rb') as g:
+        clgCodeList = pickle.load(g)
+        
+    return list(clgCodeList.values())    

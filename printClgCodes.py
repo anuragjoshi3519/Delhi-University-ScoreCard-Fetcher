@@ -1,25 +1,10 @@
-from bs4 import BeautifulSoup
-import requests
+import pickle
 
-def printClgCodes():
-    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-    try:
-        response = requests.get(url,headers=header)
-        soup = BeautifulSoup(response.text,'html.parser')
+with open('Resources/collegeCodes','rb') as g:
+    clgCodeList = pickle.load(g)
 
-        s=soup.find('select',{'id':'ddlcollege'})
-        items=s.find_all('option')[1:]
-        clgCode = [item.get('value') for item in items]
-        clgName = [item.text for item in items]
-
-        clgCodeList = dict(zip(clgName,clgCode))
-
-        for clg,code in clgCodeList.items():
-            print('{} -- {}'.format(clg,code))
-    
-    except:
-        print('Error in printing!')
-        
-if __name__=='__main__':
-    printClgCodes()
+print('\n{0:65}  {1:^5}'.format('College Name','College Code'))
+print('{0:65}  {1:^5}'.format('------------','------------'))
+print()
+for clg,code in clgCodeList.items():
+    print('{0:-<65}  {1:^5}'.format(clg,code))
