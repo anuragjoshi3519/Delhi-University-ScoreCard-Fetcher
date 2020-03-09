@@ -31,15 +31,14 @@ _Make sure you have python3.x installed on your system_
 1. First clone the repository
 2. Using terminal, go the cloned folder
 3. Run:-  *pip3 install -r requirements.txt*
-
-
-_To check College codes :-  *python3 printClgCodes.py*_
-
-_To check all courses names :-   *python3 printCourseNames.py*_
-
 4. Run this script and start fetching:-  *python3 fetchScoreCard.py*
 
 _Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
 
+
+**Note :**
+_To check College codes, run :-  *python3 printClgCodes.py*_
+
+_To check all courses names, run :-   *python3 printCourseNames.py*_*
 
 
