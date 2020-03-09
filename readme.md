@@ -33,8 +33,12 @@ _Make sure you have python3.x installed on your system_
 
    _You should know your college code, roll number, and course name (optional) to successfully fetch results_ 
 3. Run:-  *pip3 install -r requirements.txt*
-4. Check your college code by running:-  *python3 printClgCodes.py*
-5. Run this script and start fetching:-  *python3 fetchScoreCard.py*
+
+
+_To check College codes :-  *python3 printClgCodes.py*_
+_To check Course names :-   *python3 printCourseNames.py*_
+
+4. Run this script and start fetching:-  *python3 fetchScoreCard.py*
 
 _Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
 
