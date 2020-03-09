@@ -40,7 +40,7 @@ def getResult(subject, sem, clgCode, rollNo, email_from='', email_pass='', email
             
 def main():
 
-    keep_running = input("Keep this script running until your result is declared and mailed to you? (Y/n): ")
+    keep_running = input("Keep this script running until your result is declared and mailed to you? (Y/[n]): ")
 
     sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     
