@@ -1,4 +1,2 @@
-import pickle
-
-with open('Resources/CourseNames.txt','r') as f:
-    print('\n{}'.format(f.read()))
+with open('Resources/CoursesNames.txt','r') as f:
+    print(f.read())

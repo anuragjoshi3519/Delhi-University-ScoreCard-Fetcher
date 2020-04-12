@@ -139,6 +139,27 @@ def isResultOut(subject, sem):
         #print('Error occurred in fetching result. Retrying...')
         return False
 
+def getCoursesNames():
+    try:
+        url='https://duresult.in/students/List_Of_Declared_Results.aspx'
+        headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+        response = requests.get(url,headers=headers)
+        soup = BeautifulSoup(response.text,'html.parser')
+        cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
+
+        courses = []
+        for i in range(1,len(cells),6):
+            courses.append(''.join([s for s in cells[i].text]))
+        courses = sorted(set(courses))
+        
+        with open('Resources/CoursesNames.txt','w') as f:
+            for i,name in enumerate(courses):
+                f.write(f'{i+1}) {name}\n')
+    
+    except:
+        
+        #print('Error occurred in fetching result. Retrying...')
+        return False
 
 def printClgCodes():
     url = 'https://duresult.in/students/Combine_GradeCard.aspx'
