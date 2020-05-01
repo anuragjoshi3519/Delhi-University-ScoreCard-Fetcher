@@ -17,32 +17,34 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ### First run the following commands on terminal to install required packages : 
 
-1. sudo apt-get update
-2. sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
-3. sudo dpkg -i wkhtmltox_0.12.1.3-1~bionic_amd64.deb
-4. sudo apt-get install -f
-5. sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
-6. sudo apt-get install python3-pip
+1. `sudo apt-get update`
+2. `sudo wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb`
+3. `sudo dpkg -i wkhtmltox_0.12.1.3-1~bionic_amd64.deb`
+4. `sudo apt-get install -f`
+5. `sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev`
+6. `sudo apt-get install python3-pip`
 
 _Make sure you have python3.x installed on your system_
 
-### Now to run the program:
+### Now to start using the fetcher, first run:
 
-1. git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
-2. cd Delhi-University-ScoreCard-Fetcher
-3. pip install virtualenv
-4. virtualenv -p /usr/bin/python3 env
-5. source env/bin/activate
-6. pip install -r requirements.txt
+1. `git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git`
+2. `cd Delhi-University-ScoreCard-Fetcher`
+3. `pip install virtualenv`
+4. `virtualenv -p /usr/bin/python3 env`
+5. `source env/bin/activate`
+6. `pip install -r requirements.txt`
 
-**Now setup is complete. To start fetching, run:**
+**Now the setup is complete. To start fetching, run:**
  
- _python3 fetchScoreCard.py_
+ `_python3 fetchScoreCard.py_`
 
 
-**Note :**
+
+**NOTE :**
 
 _Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
+
 
 
 **Few utility python scripts:**
