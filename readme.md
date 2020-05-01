@@ -28,18 +28,26 @@ _Make sure you have python3.x installed on your system_
 
 ### Now to run the program:
 
-1. First clone the repository
-2. Using terminal, go the cloned folder
-3. Run:-  *pip3 install -r requirements.txt*
-4. Run this script and start fetching:-  *python3 fetchScoreCard.py*
+1. git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
+2. cd Delhi-University-ScoreCard-Fetcher
+3. pip install virtualenv
+4. virtualenv -p /usr/bin/python3 env
+5. source env/bin/activate
+6. pip install -r requirements.txt
 
-_Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
+**Now setup is complete. To start fetching, run:**
+ 
+ _python3 fetchScoreCard.py_
 
 
 **Note :**
 
-To check all **college codes**, run :-  *python3 printClgCodes.py*
+_Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
 
-To check all **courses names**, run :-   *python3 printCourseNames.py*
+
+**Few utility python scripts:**
+
+1. To check all **college codes**, run :-  *python3 printClgCodes.py*
+2. To check all **courses names**, run :-   *python3 printCourseNames.py*
 
 
