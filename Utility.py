@@ -84,7 +84,7 @@ def fetchGradeCard(clgCode,rollno):
 
         filepath = 'Results_pdf/ScoreCard_'+rollno+'.pdf'
 
-        with open('data/page.html','w') as f:
+        with open('data/page.html','w',encoding='utf-8') as f:
             f.write(str(result))
 
         options = {

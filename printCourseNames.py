@@ -1,2 +1,3 @@
-with open('Resources/CoursesNames.txt','r') as f:
-    print(f.read())
+with open('Resources/CoursesNames.txt','r',encoding='utf-8') as f:
+    courses = f.read()
+    [print(course) for course in courses.split('\n')]

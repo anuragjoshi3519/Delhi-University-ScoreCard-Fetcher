@@ -30,10 +30,10 @@ _Make sure you have python3.x installed on your system_
 
 1. `git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git`
 2. `cd Delhi-University-ScoreCard-Fetcher`
-3. `pip install virtualenv`
+3. `pip3 install virtualenv`
 4. `virtualenv -p /usr/bin/python3 env`
 5. `source env/bin/activate`
-6. `pip install -r requirements.txt`
+6. `pip3 install -r requirements.txt`
 
 **Now the setup is complete. To start fetching, run:**
  

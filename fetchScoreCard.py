@@ -103,6 +103,7 @@ def main():
 if __name__=='__main__':
     
     print("\n\nTo check your college code, first stop this script and run: $ python printClgCodes.py")
+    print("\nNote: Make sure to allow 'less secure apps' in you gmail account to use email services (refer to link in readme.md file).\n") 
     print("-----------------------------------------------------------------------------------------")
     print("-----------------------------------------------------------------------------------------\n")
     
