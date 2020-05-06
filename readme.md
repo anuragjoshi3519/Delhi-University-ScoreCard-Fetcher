@@ -24,7 +24,7 @@ sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 sudo apt-get install python3-pip
 ```
 
-_Make sure you have python3.x installed on your system_
+>Make sure you have python3.x installed on your system
 
 ### Now to start using the fetcher, first run:
 
@@ -47,7 +47,7 @@ pip3 install -r requirements.txt
 
 **NOTE :**
 
-_Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services._
+>Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services.
 
 
 
