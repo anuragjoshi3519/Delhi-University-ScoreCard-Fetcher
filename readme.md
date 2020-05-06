@@ -6,10 +6,10 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ## Features
 
-1. DU ScoreCard Fetcher can be used for fetching single as well as multiple result scorecards PDF.
-2. Any student belonging to any course or any college in Delhi University can use it to fetch results. 
-3. You can opt to get your result PDF downloaded in your system and by email too.
-4. You can even keep the script running, in your local or remote server, until the results are out (and you will be notified by an email once they are out )
+* DU ScoreCard Fetcher can be used for fetching single as well as multiple result scorecards PDF.
+* Any student belonging to any course or any college in Delhi University can use it to fetch results. 
+* You can opt to get your result PDF downloaded in your system and by email too.
+* You can even keep the script running, in your local or remote server, until the results are out (and you will be notified by an email once they are out )
 
 ## How to use?
 
