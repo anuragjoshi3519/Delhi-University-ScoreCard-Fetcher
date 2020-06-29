@@ -43,4 +43,4 @@ def sendMail(fromaddr,password,toaddr,filepath):
         print('Mail Sent')
         
     except:
-        print('Mail Error!')
+        print("Mail Error! (Make sure to allow 'less secure apps' in your gmail account)")
