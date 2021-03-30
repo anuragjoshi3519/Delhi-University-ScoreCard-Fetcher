@@ -17,8 +17,8 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ```bash
 sudo apt-get update
-<!--- ![](wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb) --->
-<!--- ![](wget sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb) --->
+#wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+#wget sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
 sudo apt-get install wkhtmltopdf && sudo apt-get install -f
 sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 sudo apt-get install python3-pip
