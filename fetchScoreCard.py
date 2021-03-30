@@ -1,9 +1,9 @@
 import time
 import os
 import getpass
-
 from SendMail import sendMail
-from Utility import printClgCodes, connect, fetchGradeCard, isResultOut, getClgCodes
+from config import URL,HEADER
+from Utility import connect, fetchGradeCard, isResultOut, getClgCodes
 
 def downloadAllResult(subject,sem, clgCode, rollNoList):
     
@@ -102,7 +102,7 @@ def main():
 
 if __name__=='__main__':
     
-    print("\n\nTo check your college code, first stop this script and run: $ python printClgCodes.py")
+    print("\n\nTo check your college code, run: $ python3 printClgCodes.py")
     print("\nNote: Make sure to allow 'less secure apps' in your gmail account to use email services (refer to link in readme.md file).\n") 
     print("-----------------------------------------------------------------------------------------")
     print("-----------------------------------------------------------------------------------------\n")
