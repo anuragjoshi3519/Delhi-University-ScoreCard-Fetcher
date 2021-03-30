@@ -7,20 +7,19 @@ import pdfkit
 import os
 import pickle
 from bs4 import BeautifulSoup
-
+from config import URL,HEADER
 
 def connect():
-    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-
+    
     if not os.path.isdir('data'):
         os.mkdir('data')
+        
     with requests.Session() as request:
 
         form_data={}
         
         try:
-            response = request.get(url,headers=header)
+            response = request.get(URL,headers=HEADER)
             soup = BeautifulSoup(response.text,'html.parser')
 
             #Bypassing Captcha
@@ -28,7 +27,7 @@ def connect():
             for link in soup.find_all('img' ,  {'id': 'imgCaptcha'}):
                 captcha = link.get('src')
 
-            captchaLink = 'https://duresult.in/students/'+captcha
+            captchaLink = URL.split('Combine_GradeCard.aspx')[0]+captcha
             urllib.request.urlretrieve(captchaLink,'data/captcha.jpg')
             captchaText = pytesseract.image_to_string(Image.open('data/captcha.jpg'))
             #-----------------
@@ -47,30 +46,29 @@ def connect():
                 'btnsearch': 'Print Score Card'
                }
         except:
-            pass
+            return form_data
         
     return form_data  
 
 
 def fetchGradeCard(clgCode,rollno):
-
-    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-
+    
     form_data = connect()
+    if len(form_data)==0:
+        return 0
     form_data['ddlcollege']=str(clgCode)
     form_data['txtrollno']=str(rollno)
     
     try:
         
-        result = requests.post(url, data=form_data,headers=header)
+        result = requests.post(URL, data=form_data,headers=HEADER)
         result = BeautifulSoup(result.text,'html.parser')
          
         while len(result.body.findAll(text=re.compile('^Sorry! Invalid captch code.$')))!=0:
             form_data = connect()
             form_data['ddlcollege']=str(clgCode)
             form_data['txtrollno']=str(rollno)
-            result = requests.post(url, data=form_data,headers=header)
+            result = requests.post(URL, data=form_data,headers=HEADER)
             result = BeautifulSoup(result.text,'html.parser')
             
         if len(result.body.findAll(text=re.compile('^Sorry! no record found.$')))!=0: 
@@ -79,10 +77,10 @@ def fetchGradeCard(clgCode,rollno):
         for img in result.findAll('img'):
             img.decompose()
             
-        if not os.path.isdir('Results_pdf'):
-            os.mkdir('Results_pdf')
+        if not os.path.isdir('Result-PDFs'):
+            os.mkdir('Result-PDFs')
 
-        filepath = 'Results_pdf/ScoreCard_'+rollno+'.pdf'
+        filepath = 'Result-PDFs/ScoreCard_'+rollno+'.pdf'
 
         with open('data/page.html','w',encoding='utf-8') as f:
             f.write(str(result))
@@ -97,7 +95,7 @@ def fetchGradeCard(clgCode,rollno):
             'margin-left': '5mm',
             'margin-right': '5mm',
             'zoom': '1.5'
-        }    
+        }
         pdfkit.from_file('data/page.html',filepath,options=options)
         
     except:
@@ -105,28 +103,25 @@ def fetchGradeCard(clgCode,rollno):
     
     return filepath
 
-def isResultOut(subject, sem):
+def isResultOut(courseName, sem):
     try:
-        url='https://duresult.in/students/List_Of_Declared_Results.aspx'
-        headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-        response = requests.get(url,headers=headers)
+        response = requests.get(URL.split('Combine_GradeCard.aspx')[0]+'List_Of_Declared_Results.aspx',headers=HEADER)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
-
-        subject = ''.join([s for s in subject if s.isalnum()])
-
+        courseName = ''.join([s for s in courseName if s.isalnum()])
+        
         course = []
         semester = []
         for i in range(1,len(cells),6):
             course.append(''.join([s for s in cells[i].text.lower() if s.isalnum()]))
-            semester.append(cells[i+2].text)  
+            semester.append(cells[i+2].text)
     
         course_sem_dict = dict(zip(course,semester))    
 
-        if subject!='':
+        if courseName!='':
             flag=0
             for course,semester in course_sem_dict.items():
-                if (subject in course) and (sem.lower() == semester.lower()) :
+                if (courseName.lower() in course) and (sem.lower() == semester.lower()) :
                     flag=1
             if flag==1:
                 return True
@@ -141,9 +136,7 @@ def isResultOut(subject, sem):
 
 def getCoursesNames():
     try:
-        url='https://duresult.in/students/List_Of_Declared_Results.aspx'
-        headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-        response = requests.get(url,headers=headers)
+        response = requests.get(URL.split('Combine_GradeCard.aspx')[0]+'List_Of_Declared_Results.aspx',headers=HEADER)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
 
@@ -157,16 +150,12 @@ def getCoursesNames():
                 f.write(f'{i+1}) {name}\n')
     
     except:
-        
-        #print('Error occurred in fetching result. Retrying...')
+        #print('Error in fetching Course names.')
         return False
 
-def printClgCodes():
-    url = 'https://duresult.in/students/Combine_GradeCard.aspx'
-    header = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-
+def fetchAndSaveClgCodes():
     try:
-        response = requests.get(url,headers=header)
+        response = requests.get(URL,headers=HEADER)
         soup = BeautifulSoup(response.text,'html.parser')
 
         s=soup.find('select',{'id':'ddlcollege'})
@@ -174,17 +163,19 @@ def printClgCodes():
         clgCode = [item.get('value') for item in items]
         clgName = [item.text for item in items]
 
-        clgCodeList = dict(zip(clgName,clgCode))
-
-        for clg,code in clgCodeList.items():
-            print('{} -- {}'.format(clg,code))
+        clgCodeDict = dict(zip(clgName,clgCode))
+        with open('Resources/collegeCodes.pkl','wb') as f:
+            pickle.dump(clgCodesDict,f)
     
     except:
-        print('Error in printing!')
+        #print('Error in fetching!')
+        return {}
+
+    return clgCodeDict    
 
 def getClgCodes():
     
     with open('Resources/collegeCodes','rb') as g:
         clgCodeList = pickle.load(g)
         
-    return list(clgCodeList.values())    
+    return list(clgCodeList.values())   

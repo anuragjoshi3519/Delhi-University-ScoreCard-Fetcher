@@ -15,7 +15,7 @@ def sendMail(fromaddr,password,toaddr,filepath):
 
     msg['Subject'] = "Your Result"
 
-    body = "Find the attachment."
+    body = "Please find the attachment."
 
     msg.attach(MIMEText(body, 'plain')) 
 
