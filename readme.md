@@ -33,7 +33,6 @@ sudo apt-get install python3-pip && sudo apt-get install python3-venv
 ```bash
 git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
 cd Delhi-University-ScoreCard-Fetcher
-pip3 install virtualenv
 python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
