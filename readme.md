@@ -21,7 +21,8 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ```bash
 sudo apt-get update
-sudo apt-get install wkhtmltopdf && sudo apt-get install -f
+sudo apt-get install wkhtmltopdf
+sudo apt-get --fix-broken install
 sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
 sudo apt-get install python3-pip && sudo apt-get install python3-venv
 ```
