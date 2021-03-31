@@ -23,7 +23,7 @@ The script will do all the necessary things to make sure your result is e-mailed
 sudo apt-get update
 sudo apt-get install wkhtmltopdf && 
 sudo apt-get install tesseract-ocr && sudo apt-get install libtesseract-dev
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip && sudo apt-get install python3-venv
 ```
 
 >Make sure you have python3.x installed on your system
@@ -34,7 +34,7 @@ sudo apt-get install python3-pip
 git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
 cd Delhi-University-ScoreCard-Fetcher
 pip3 install virtualenv
-virtualenv -p /usr/bin/python3 env
+python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
 ```
