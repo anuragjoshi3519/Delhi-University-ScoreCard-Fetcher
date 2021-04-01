@@ -1,46 +1,58 @@
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.mime.base import MIMEBase
-from email import encoders
+import requests
 
-import smtplib
+def sendMail(toaddr,filepath):
+    return requests.post(
+		"https://api.mailgun.net/v3/domain/messages",
+		auth=("api", "api-key"),
+        files=[("attachment", (filepath.split('/')[1], open(filepath,"rb").read()))],
+		data={"from": "DU Scorecard Fetcher <mailgun@domain>",
+			"to": [toaddr],
+			"subject": "Your Result",
+			"text": "Please find the attachment."})
 
-def sendMail(fromaddr,password,toaddr,filepath):
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+# from email.mime.image import MIMEImage
+# from email.mime.base import MIMEBase
+# from email import encoders
+
+# import smtplib
+
+# def sendMail(fromaddr,password,toaddr,filepath):
     
-    msg = MIMEMultipart() 
+#     msg = MIMEMultipart() 
    
-    msg['From'] = fromaddr  
-    msg['To'] = toaddr
+#     msg['From'] = fromaddr  
+#     msg['To'] = toaddr
 
-    msg['Subject'] = "Your Result"
+#     msg['Subject'] = "Your Result"
 
-    body = "Please find the attachment."
+#     body = "Please find the attachment."
 
-    msg.attach(MIMEText(body, 'plain')) 
+#     msg.attach(MIMEText(body, 'plain')) 
 
-    attachment = open(filepath, "rb") 
+#     attachment = open(filepath, "rb") 
 
-    p = MIMEBase('application', 'octet-stream') 
+#     p = MIMEBase('application', 'octet-stream') 
 
-    p.set_payload((attachment).read()) 
+#     p.set_payload((attachment).read()) 
 
-    encoders.encode_base64(p) 
+#     encoders.encode_base64(p) 
 
-    p.add_header('Content-Disposition', "attachment; filename= %s" % filepath.split('/')[1]) 
+#     p.add_header('Content-Disposition', "attachment; filename= %s" % filepath.split('/')[1]) 
     
-    msg.attach(p) 
+#     msg.attach(p) 
 
-    try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
+#     try:
+#         server = smtplib.SMTP('smtp.gmail.com', 587)
+#         server.starttls()
 
-        server.login(fromaddr, password)
+#         server.login(fromaddr, password)
 
-        server.sendmail(fromaddr,toaddr, msg.as_string())
-        server.quit()
+#         server.sendmail(fromaddr,toaddr, msg.as_string())
+#         server.quit()
 
-        print('Mail Sent')
+#         print('Mail Sent')
         
-    except:
-        print("Mail Error! (Make sure to allow 'less secure apps' in your gmail account)")
+#     except:
+#         print("Mail Error! (Make sure to allow 'less secure apps' in your gmail account)")
