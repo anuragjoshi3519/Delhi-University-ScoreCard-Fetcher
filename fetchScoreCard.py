@@ -18,7 +18,7 @@ def downloadAllResult(subject,sem, clgCode, rollNoList):
         else:
             time.sleep(60)
             
-def getResult(subject, sem, clgCode, rollNo, email_to=''):
+def getResult(subject, sem, clgCode, rollNo, email_from='', email_pass='', email_to=''):
         
     while True:
         if isResultOut(subject,sem):
@@ -27,9 +27,9 @@ def getResult(subject, sem, clgCode, rollNo, email_to=''):
 
             if filepath==1:
                 print('Sorry, No record found in database. Please try again later.')
-            elif filepath!=0 and email_to!='':
-                sendMail(email_to, filepath) 
-            elif filepath!=0 and email_to=='':
+            elif filepath!=0 and email_from!='':
+                sendMail(email_from, email_pass, email_to, filepath) 
+            elif filepath!=0 and email_from=='':
                 print("Your result pdf is saved in 'Results_pdf' folder ")
             else:
                 print('Error in fetching result.')
@@ -77,10 +77,12 @@ def main():
             choiceMail = input("\nEmail result pdf? (Y/n): ")
             
         if choiceMail.lower() == 'y':
+            email_from = input("\nEnter sender's gmail id: ")
+            email_pass = getpass.getpass("\nEnter your password: ")
             email_to = input("\nEnter recipient's email id: ")
             
             print("\n\nProcessing...\n")
-            getResult(subject, sem, clgCode, rollNo, email_to)
+            getResult(subject, sem, clgCode, rollNo, email_from, email_pass, email_to)
         else:
             print("\n\nProcessing...\n")
             getResult(subject, sem, clgCode, rollNo)
@@ -101,6 +103,7 @@ def main():
 if __name__=='__main__':
     
     print("\n\nTo check your college code, run: $ python3 printClgCodes.py")
+    print("\nNote: Make sure to allow 'less secure apps' in your gmail account to use email services (refer to link in readme.md file).\n") 
     print("-----------------------------------------------------------------------------------------")
     print("-----------------------------------------------------------------------------------------\n")
     
