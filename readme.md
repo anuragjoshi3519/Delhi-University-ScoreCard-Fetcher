@@ -46,9 +46,10 @@ pip3 install -r requirements.txt
  ```
 
 
-<!-- **NOTE :** -->
 
-<!-- >Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services. -->
+**NOTE :**
+
+>Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services.
 
 
 
