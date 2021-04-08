@@ -12,7 +12,7 @@ def generateRanks(clgCode, rollNoList):
     rankData = {'Exam Roll Number':[], 'Name':[], 'CGPA':[]}
     
     for rollNo in rollNoList:
-        ret = fetchGradeCard(clgCode, rollNo)
+        ret = fetchGradeCard(clgCode, rollNo, False)
         
         if ret == 0 or ret == 1:
             invalids.append(rollNo)
@@ -43,7 +43,7 @@ def generateRanks(clgCode, rollNoList):
         rankDF.sort_values(by=["CGPA"],ascending=False,kind="mergesort",inplace=True)
         rankDF.reset_index(drop=True, inplace=True)
         rankDF.index = [*range(1,len(rankData['Name'])+1)]
-        rankDF['Rank'] = rankDF['CGPA'].rank(ascending=False,method="min").astype(int)
+        rankDF['Rank'] = rankDF['CGPA'].rank(ascending=False,method="dense").astype(int)
 
         if not os.path.isdir('RankLists'):
             os.mkdir('RankLists')

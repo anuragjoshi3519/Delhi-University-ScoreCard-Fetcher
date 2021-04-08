@@ -51,7 +51,7 @@ def connect():
     return form_data  
 
 
-def fetchGradeCard(clgCode,rollno):
+def fetchGradeCard(clgCode,rollno,generatePDF=True):
     
     form_data = connect()
     if len(form_data)==0:
@@ -77,7 +77,7 @@ def fetchGradeCard(clgCode,rollno):
         for img in result.findAll('img'):
             img.decompose()
             
-        if not os.path.isdir('Result-PDFs'):
+        if generatePDF and not os.path.isdir('Result-PDFs'):
             os.mkdir('Result-PDFs')
 
         filepath = 'Result-PDFs/ScoreCard_'+rollno+'.pdf'
@@ -96,7 +96,9 @@ def fetchGradeCard(clgCode,rollno):
             'margin-right': '5mm',
             'zoom': '1.5'
         }
-        pdfkit.from_file(f'.temp/{rollno}.html',filepath,options=options)
+        
+        if generatePDF:
+            pdfkit.from_file(f'.temp/{rollno}.html',filepath,options=options)
         
     except:
         return 0
