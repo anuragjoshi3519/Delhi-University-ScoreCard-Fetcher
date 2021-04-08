@@ -1,18 +1,18 @@
+import os
 import re
+import pdfkit
+import pickle
 import requests
+import pytesseract
 import urllib.request
 from PIL import Image
-import pytesseract
-import pdfkit
-import os
-import pickle
 from bs4 import BeautifulSoup
 from config import URL,HEADER
 
 def connect():
     
-    if not os.path.isdir('data'):
-        os.mkdir('data')
+    if not os.path.isdir('.temp'):
+        os.mkdir('.temp')
         
     with requests.Session() as request:
 
@@ -24,12 +24,12 @@ def connect():
 
             #Bypassing Captcha
             #-----------------
-            for link in soup.find_all('img' ,  {'id': 'imgCaptcha'}):
-                captcha = link.get('src')
+            link = soup.find('img' ,  {'id': 'imgCaptcha'})
+            captcha = link.get('src')
 
             captchaLink = URL.split('Combine_GradeCard.aspx')[0]+captcha
-            urllib.request.urlretrieve(captchaLink,'data/captcha.jpg')
-            captchaText = pytesseract.image_to_string(Image.open('data/captcha.jpg'))
+            urllib.request.urlretrieve(captchaLink,'.temp/captcha.jpg')
+            captchaText = pytesseract.image_to_string(Image.open('.temp/captcha.jpg'))
             #-----------------
 
             viewstate = soup.select("#__VIEWSTATE")[0]['value']
@@ -82,7 +82,7 @@ def fetchGradeCard(clgCode,rollno):
 
         filepath = 'Result-PDFs/ScoreCard_'+rollno+'.pdf'
 
-        with open('data/page.html','w',encoding='utf-8') as f:
+        with open(f'.temp/{rollno}.html','w',encoding='utf-8') as f:
             f.write(str(result))
 
         options = {
@@ -96,15 +96,18 @@ def fetchGradeCard(clgCode,rollno):
             'margin-right': '5mm',
             'zoom': '1.5'
         }
-        pdfkit.from_file('data/page.html',filepath,options=options)
+        pdfkit.from_file(f'.temp/{rollno}.html',filepath,options=options)
         
     except:
         return 0
     
     return filepath
 
-def isResultOut(courseName, sem):
+def isResultOut(courseName, sem):    
     try:
+        if courseName=='' and sem == '':
+            return True
+        
         response = requests.get(URL.split('Combine_GradeCard.aspx')[0]+'List_Of_Declared_Results.aspx',headers=HEADER)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
@@ -118,21 +121,20 @@ def isResultOut(courseName, sem):
     
         course_sem_dict = dict(zip(course,semester))    
 
-        if courseName!='':
-            flag=0
-            for course,semester in course_sem_dict.items():
-                if (courseName.lower() in course) and (sem.lower() == semester.lower()) :
-                    flag=1
-            if flag==1:
-                return True
-            else:
-                return False
-        return True
+        flag=0
+        for course,semester in course_sem_dict.items():
+            if (courseName.lower() in course) and (sem.lower() == semester.lower()) :
+                flag=1
+        if flag==1:
+            return True
+        else:
+            return False
     
     except:
-        
         #print('Error occurred in fetching result. Retrying...')
-        return False
+        pass
+    
+    return False
 
 def getCoursesNames():
     try:
