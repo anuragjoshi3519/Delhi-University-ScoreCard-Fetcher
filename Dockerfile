@@ -13,7 +13,7 @@ RUN apt-get install -y python3-pip
 RUN apt-get install -y python3-venv
 RUN apt-get install -y git
 
-RUN git clone --single-branch --branch dev2021 https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
+RUN git clone --single-branch --branch dev https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
 
 WORKDIR "Delhi-University-ScoreCard-Fetcher/"
 
