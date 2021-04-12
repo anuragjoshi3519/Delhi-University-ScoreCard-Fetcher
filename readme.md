@@ -8,7 +8,7 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 * DU ScoreCard Fetcher can be used for fetching single as well as multiple result scorecards PDF.
 * You can choose to get your result PDF downloaded in your system as well as by email.
-* You can generate class wide rank lists for any course.
+* You can generate class rank lists for any course.
 * You can even keep the script running, in your local or remote server, until the results are out (and you will be notified by an email once they are out )
 * Any student belonging to any course or any college in Delhi University can use it to fetch his/her result PDF.
 
