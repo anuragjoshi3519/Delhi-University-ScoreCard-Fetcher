@@ -4,7 +4,7 @@ import time
 from SendMail import sendMail
 from config import URL,HEADER
 from GenerateRanklist import *
-from Utility import fetchGradeCard, isResultOut, getClgCodes
+from Utility import fetchGradeCard, isResultOut, getClgCodes, printClgCodes, printCourseNames
 
 def downloadAllResult(clgCode, rollNoList):
     invalids = []
@@ -68,8 +68,26 @@ def main():
     
     sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     
-    choice = input("\n'A' : Fetch your result.\n'B' : Fetch multiple results. \n'C' : Generate rank list. \n\n(Enter any other key to exit.): ")
+    choice = input("\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
     
+    if choice.lower()=='x':
+        printClgCodes()
+        input("\nPress enter key to continue ")
+        try:
+            os.system('clear')
+        except:
+            pass
+        main()
+        
+    if choice.lower()=='y':
+        printCourseNames()
+        input("\nPress enter key to continue ")
+        try:
+            os.system('clear')
+        except:
+            pass
+        main()
+        
     if choice.lower()=='a':
         
         subject = ''
@@ -136,8 +154,6 @@ def main():
     print('\nDone')
 
 if __name__=='__main__':
-    
-    print("\n\nTo check your college code, run: $ python3 printClgCodes.py")
-    print("------------------------------------------------------------\n")
-    
+    print("\nWelcome to DU ScoreCard Fetcher Service")
+    print("---------------------------------------")
     main()

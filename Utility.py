@@ -175,8 +175,24 @@ def fetchAndSaveClgCodes():
         #print('Error in fetching!')
         return {}
 
-    return clgCodeDict    
+    return clgCodeDict
 
+def printClgCodes():
+
+    with open('Resources/collegeCodes','rb') as g:
+        clgCodeDict = pickle.load(g)
+
+    print('\n{0:65}  {1:^5}'.format('College Name','College Code'))
+    print('{0:65}  {1:^5}'.format('------------','------------\n'))
+    for clg,code in clgCodeDict.items():
+        print('{0:-<65}  {1:^5}'.format(clg,code))
+
+def printCourseNames():
+    with open('Resources/CoursesNames.txt','r',encoding='utf-8') as f:
+        courses = f.read()
+        print()
+        [print(course) for course in courses.split('\n')]
+        
 def getClgCodes():
     
     with open('Resources/collegeCodes','rb') as g:
