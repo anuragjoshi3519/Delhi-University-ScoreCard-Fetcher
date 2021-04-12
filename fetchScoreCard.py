@@ -88,12 +88,12 @@ def main():
             choiceMail = 'y'
         else:
             choiceMail = input("\nEmail result pdf? (Y/n): ")
-            
-        print("\n\nProcessing...\n")
-        
+                    
         if choiceMail.lower() == 'y':
             email_to = input("\nEnter recipient's email id: ")
-        
+
+        print("\n\nProcessing...\n")
+
         getResult(subject, sem, clgCode, rollNo, email_to)
         
     elif choice.lower()=='b' or choice.lower()=='c':
