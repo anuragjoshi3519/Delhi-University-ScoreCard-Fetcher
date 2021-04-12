@@ -77,10 +77,10 @@ def fetchGradeCard(clgCode,rollno,generatePDF=True):
         for img in result.findAll('img'):
             img.decompose()
             
-        if generatePDF and not os.path.isdir('Result-PDFs'):
-            os.mkdir('Result-PDFs')
+        if generatePDF and not os.path.isdir('Downloads'):
+            os.mkdir('Downloads')
 
-        filepath = 'Result-PDFs/ScoreCard_'+rollno+'.pdf'
+        filepath = 'Downloads/ScoreCard_'+rollno+'.pdf'
 
         with open(f'.temp/{rollno}.html','w',encoding='utf-8') as f:
             f.write(str(result))

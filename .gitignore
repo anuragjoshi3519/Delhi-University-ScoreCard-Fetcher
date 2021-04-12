@@ -2,5 +2,4 @@ env/
 __pycache__/
 .ipynb_checkpoints/
 .temp/
-Result-PDFs/
-RankLists/
+Downloads/*

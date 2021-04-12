@@ -18,7 +18,7 @@ def downloadAllResult(clgCode, rollNoList):
     if len(invalids) == len(rollNoList):
         return 'Sorry! Results are not out yet.\n' 
     else:
-        return "Result PDFs  has been successfully generated and saved in 'Result-PDFs' folder"
+        return "Result PDFs  has been successfully generated and saved in 'Downloads/' folder"
             
 def getResult(subject, sem, clgCode, rollNo, email_to):
         
@@ -32,7 +32,7 @@ def getResult(subject, sem, clgCode, rollNo, email_to):
             elif filepath!=0 and email_to!='':
                 sendMail(email_to, filepath) 
             elif filepath!=0 and email_to=='':
-                print("Your result pdf is saved in 'Results_pdf' folder ")
+                print("Your result pdf is saved in 'Downloads/' folder ")
             else:
                 print('Error in fetching result.')
             break

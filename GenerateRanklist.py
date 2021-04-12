@@ -45,9 +45,9 @@ def generateRanks(clgCode, rollNoList):
         rankDF.index = [*range(1,len(rankData['Name'])+1)]
         rankDF['Rank'] = rankDF['CGPA'].rank(ascending=False,method="dense").astype(int)
 
-        if not os.path.isdir('RankLists'):
-            os.mkdir('RankLists')
+        if not os.path.isdir('Downloads'):
+            os.mkdir('Downloads')
 
-        rankDF.to_csv(f'RankLists/{course}_{sem}.csv',index=False)
+        rankDF.to_csv(f'Downloads/{course}_{sem}.csv',index=False)
 
-        return "Rank list has been successfully generated and saved in 'RankLists' folder"
+        return "Rank list has been successfully generated and saved in 'Downloads/' folder"
