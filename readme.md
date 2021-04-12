@@ -25,7 +25,7 @@ docker pull anuragjo/delhi-university-scorecard-fetcher
 #### Run:
 
 ```bash
-docker run -it -v ~/Downloads/:/Delhi-University-ScoreCard-Fetcher/Downloads/ delhi-university-scorecard-fetcher
+docker run -it -v ~/Downloads/:/Delhi-University-ScoreCard-Fetcher/Downloads/ anuragjo/delhi-university-scorecard-fetcher
 ```
 
 
