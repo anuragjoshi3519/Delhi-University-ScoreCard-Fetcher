@@ -44,6 +44,12 @@ pip3 install -r requirements.txt
  ```bash
  python3 fetchScoreCard.py
  ```
+ 
+
+**NOTE :**
+
+>Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services.
+
 
 **Few utility python scripts:**
 
