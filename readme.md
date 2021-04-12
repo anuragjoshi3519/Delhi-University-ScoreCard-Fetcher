@@ -45,14 +45,6 @@ pip3 install -r requirements.txt
  python3 fetchScoreCard.py
  ```
 
-
-
-**NOTE :**
-
->Make sure to allow gmail [less secure apps](https://myaccount.google.com/lesssecureapps) to use email services.
-
-
-
 **Few utility python scripts:**
 
 1. To check all **college codes**, run :-  `python3 printClgCodes.py` 
