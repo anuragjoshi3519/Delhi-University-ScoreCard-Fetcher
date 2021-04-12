@@ -51,9 +51,9 @@ def getCollegeCode():
             print('Please enter a valid college code.')
     return clgCode
 
-def getSubjectAndSem():
+def getSemester():
     
-    subject = input("\nEnter Course Name : ").lower()
+    sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
     sem = None
     while True:
         try:
@@ -61,13 +61,11 @@ def getSubjectAndSem():
             break
         except:
             print('Please enter in range (1-6). Try again.')
-    return subject,sem
+    return sem
 
 
 def main():
-    
-    sem_encodings={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI'}
-    
+     
     choice = input("\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
     
     if choice.lower()=='x':
@@ -98,7 +96,8 @@ def main():
         keep_running = input("\nKeep this script running until your result is declared and mailed to you? (Y/[n]): ")
         
         if keep_running.lower()=='y':
-            subject, sem = getSubjectAndSem()
+            subject = input("\nEnter Course Name : ").lower()
+            sem = getSemester()
         
         rollNo = input("\nEnter roll no.: ")
         
@@ -110,7 +109,7 @@ def main():
         if choiceMail.lower() == 'y':
             email_to = input("\nEnter recipient's email id: ")
 
-        print("\n\nProcessing...\n")
+        print("\nProcessing...")
 
         getResult(subject, sem, clgCode, rollNo, email_to)
         
@@ -131,7 +130,7 @@ def main():
                 
         rollNumberList = list(map(str,[*range(start,end+1)]))
         
-        print("\n\nProcessing...\n")
+        print("\nProcessing...")
         
         
         if choice.lower()=='b':
