@@ -14,7 +14,24 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ## How to use?
 
-### First run the following commands on terminal to install required packages : 
+## With Docker
+
+#### Pull docker image from repository:
+
+```bash
+docker pull anuragjo/delhi-university-scorecard-fetcher
+```
+
+#### Run:
+
+```bash
+docker run -it -v ~/Downloads/:/Delhi-University-ScoreCard-Fetcher/Downloads/ delhi-university-scorecard-fetcher
+```
+
+
+## Without Docker
+
+#### Run the following commands on terminal to install required packages : 
 
 <!--- wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb --->
 <!--- sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb --->
@@ -30,7 +47,7 @@ sudo apt-get install python3-pip && sudo apt-get install python3-venv
 
 >Make sure you have python3.x installed on your system
 
-### Now to start using the fetcher, first run:
+#### Now, for cloning and setting up project, run:
 
 ```bash
 git clone https://github.com/anuragjoshi3519/Delhi-University-ScoreCard-Fetcher.git
@@ -40,7 +57,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-**Now the setup is complete. To start fetching, run:**
+**Setup is complete. To start fetching, run:**
  
  ```bash
  python3 fetchScoreCard.py
