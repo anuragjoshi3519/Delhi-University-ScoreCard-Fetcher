@@ -14,6 +14,7 @@ The script will do all the necessary things to make sure your result is e-mailed
 
 ## How to use?
 
+<!--
 ## With Docker
 
 #### Pull docker image from repository:
@@ -30,6 +31,7 @@ docker run -it -v ~/Downloads/:/Delhi-University-ScoreCard-Fetcher/Downloads/ an
 
 
 ## Without Docker
+-->
 
 #### Run the following commands on terminal to install required packages : 
 
