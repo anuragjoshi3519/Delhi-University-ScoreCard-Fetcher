@@ -42,8 +42,9 @@ def connect():
                 '__VIEWSTATE': viewstate,
                 '__VIEWSTATEGENERATOR': viewstateGenerator,
                 '__EVENTVALIDATION': eventValidation,
+                'captcha':"rb_captcha_image",
                 'txtcaptcha': captchaText,
-                'btnsearch': 'Print Score Card'
+                'btnsearch': 'Print+Score+Card'
                }
         except:
             return form_data
@@ -51,13 +52,16 @@ def connect():
     return form_data  
 
 
-def fetchGradeCard(clgCode,rollno,generatePDF=True):
+def fetchGradeCard(clgCode,rollno,dd,mm,yyyy,generatePDF=True):
     
     form_data = connect()
     if len(form_data)==0:
         return 0
     form_data['ddlcollege']=str(clgCode)
     form_data['txtrollno']=str(rollno)
+    form_data['ddlDD']=str(dd)
+    form_data['ddlMM']=str(mm)
+    form_data['ddlYYYY']=str(yyyy)
     
     try:
         

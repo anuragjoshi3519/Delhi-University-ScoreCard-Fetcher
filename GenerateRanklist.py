@@ -3,7 +3,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from Utility import fetchGradeCard, isResultOut
 
-def generateRanks(clgCode, rollNoList):
+def generateRanks(clgCode, rolldobList):
     
     flag = False
     sem = None
@@ -11,8 +11,8 @@ def generateRanks(clgCode, rollNoList):
     invalids = []
     rankData = {'Exam Roll Number':[], 'Name':[], 'CGPA':[]}
     
-    for rollNo in rollNoList:
-        ret = fetchGradeCard(clgCode, rollNo, False)
+    for rollNo,dob in rolldobList:
+        ret = fetchGradeCard(clgCode, rollNo, dob[0], dob[1], dob[2], False)
         
         if ret == 0 or ret == 1:
             invalids.append(rollNo)
@@ -35,7 +35,7 @@ def generateRanks(clgCode, rollNoList):
 
         rankData['CGPA'].append(float(tr[3].text))
 
-    if len(invalids) == len(rollNoList):
+    if len(invalids) == len(rolldobList):
         return 'Sorry! Results are not out yet.\n'
 
     else:

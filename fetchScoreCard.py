@@ -1,36 +1,37 @@
 import os
 import glob
 import time
-from SendMail import sendMail
+import getpass
+from SendMail import sendMail, sendMailSMTP
 from config import URL,HEADER
 from GenerateRanklist import *
 from Utility import fetchGradeCard, isResultOut, getClgCodes, printClgCodes, printCourseNames
 
-def downloadAllResult(clgCode, rollNoList):
+def downloadAllResult(clgCode, rolldobList):
     invalids = []
     
-    for rollNo in rollNoList:
-        ret = fetchGradeCard(clgCode, str(rollNo))
+    for rollNo,dob in rolldobList:
+        ret = fetchGradeCard(clgCode, str(rollNo), dob[0], dob[1], dob[2])
         if ret == 0 or ret == 1:
             invalids.append(rollNo)
             #print(f'{rollNo} is not a valid exam roll number. Skipping..')
             continue
-    if len(invalids) == len(rollNoList):
+    if len(invalids) == len(rolldobList):
         return 'Sorry! Results are not out yet.\n' 
     else:
         return "Result PDFs  has been successfully generated and saved in 'Downloads/' folder"
             
-def getResult(subject, sem, clgCode, rollNo, email_to):
+def getResult(subject, sem, clgCode, rollNo, email_from, email_pass, email_to, dd, mm, yyyy):
         
     while True:
         if isResultOut(subject,sem):
 
-            filepath = fetchGradeCard(clgCode, rollNo)
+            filepath = fetchGradeCard(clgCode, rollNo, dd, mm, yyyy)
 
             if filepath==1:
                 print('Sorry, No record found in database. Please try again later.')
             elif filepath!=0 and email_to!='':
-                sendMail(email_to, filepath) 
+                sendMailSMTP(email_from, email_pass, email_to, filepath)
             elif filepath!=0 and email_to=='':
                 print("Your result pdf is saved in 'Downloads/' folder ")
             else:
@@ -65,8 +66,12 @@ def getSemester():
 
 
 def main():
-     
-    choice = input("\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
+    try:
+        os.system('clear')
+    except:
+        pass
+    
+    choice = input("Welcome to DU ScoreCard Fetcher\n-------------------------------\n\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
     
     if choice.lower()=='x':
         printClgCodes()
@@ -100,6 +105,8 @@ def main():
             sem = getSemester()
         
         rollNo = input("\nEnter roll no.: ")
+        dob = input("\nEnter DOB (dd-mm-yyyy): ")
+        dd, mm, yyyy = tuple(map(int,dob.split('-')))
         
         if keep_running.lower()=='y':
             choiceMail = 'y'
@@ -107,36 +114,34 @@ def main():
             choiceMail = input("\nEmail result pdf? (Y/n): ")
                     
         if choiceMail.lower() == 'y':
+            print("\nNote: Make sure to allow 'less secure apps' in your gmail account to use email services (refer to link in readme.md file)")
+            email_from = input("\nEnter sender's gmail id: ")
+            email_pass = getpass.getpass("Enter your password: ")
             email_to = input("\nEnter recipient's email id: ")
 
         print("\nProcessing...")
 
-        getResult(subject, sem, clgCode, rollNo, email_to)
+        getResult(subject, sem, clgCode, rollNo, email_from, email_pass, email_to, dd, mm, yyyy)
         
     elif choice.lower()=='b' or choice.lower()=='c':
         
-        start = None
-        end = None
+        n = int(input("\nEnter total number of students: "))
+        rolldobList = []
         clgCode = getCollegeCode()
         
-        while True:
-            start = int(input("\nEnter starting roll no.: "))
-            end = int(input("\nEnter ending roll no.: "))
-            
-            if start>end or end-start>200:
-                print("\nInvalid input. Please try again.")
-                continue
-            break
-                
-        rollNumberList = list(map(str,[*range(start,end+1)]))
+        for i in range(1,n+1): 
+            rollNo = input(f"\nStudent #{i} Roll no. :")
+            dob = input(f"Student #{i} DOB (dd-mm-yyyy): ")
+            dob = list(map(int,dob.split('-')))
+            rolldobList.append((rollNo,dob))
         
         print("\nProcessing...")
         
         
         if choice.lower()=='b':
-            message = downloadAllResult(clgCode, rollNumberList)
+            message = downloadAllResult(clgCode, rolldobList)
         else:
-            message = generateRanks(clgCode, rollNumberList)
+            message = generateRanks(clgCode, rolldobList)
             
         print(message)
         
@@ -153,6 +158,4 @@ def main():
     print('\nDone')
 
 if __name__=='__main__':
-    print("\nWelcome to DU ScoreCard Fetcher Service")
-    print("---------------------------------------")
     main()
