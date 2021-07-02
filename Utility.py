@@ -1,18 +1,18 @@
+import os
 import re
+import pdfkit
+import pickle
 import requests
+import pytesseract
 import urllib.request
 from PIL import Image
-import pytesseract
-import pdfkit
-import os
-import pickle
 from bs4 import BeautifulSoup
 from config import URL,HEADER
 
 def connect():
     
-    if not os.path.isdir('data'):
-        os.mkdir('data')
+    if not os.path.isdir('.temp'):
+        os.mkdir('.temp')
         
     with requests.Session() as request:
 
@@ -24,12 +24,12 @@ def connect():
 
             #Bypassing Captcha
             #-----------------
-            for link in soup.find_all('img' ,  {'id': 'imgCaptcha'}):
-                captcha = link.get('src')
+            link = soup.find('img' ,  {'id': 'imgCaptcha'})
+            captcha = link.get('src')
 
             captchaLink = URL.split('Combine_GradeCard.aspx')[0]+captcha
-            urllib.request.urlretrieve(captchaLink,'data/captcha.jpg')
-            captchaText = pytesseract.image_to_string(Image.open('data/captcha.jpg'))
+            urllib.request.urlretrieve(captchaLink,'.temp/captcha.jpg')
+            captchaText = pytesseract.image_to_string(Image.open('.temp/captcha.jpg'))
             #-----------------
 
             viewstate = soup.select("#__VIEWSTATE")[0]['value']
@@ -42,8 +42,9 @@ def connect():
                 '__VIEWSTATE': viewstate,
                 '__VIEWSTATEGENERATOR': viewstateGenerator,
                 '__EVENTVALIDATION': eventValidation,
+                'captcha':"rb_captcha_image",
                 'txtcaptcha': captchaText,
-                'btnsearch': 'Print Score Card'
+                'btnsearch': 'Print+Score+Card'
                }
         except:
             return form_data
@@ -51,13 +52,16 @@ def connect():
     return form_data  
 
 
-def fetchGradeCard(clgCode,rollno):
+def fetchGradeCard(clgCode,rollno,dd,mm,yyyy,generatePDF=True):
     
     form_data = connect()
     if len(form_data)==0:
         return 0
     form_data['ddlcollege']=str(clgCode)
     form_data['txtrollno']=str(rollno)
+    form_data['ddlDD']=str(dd)
+    form_data['ddlMM']=str(mm)
+    form_data['ddlYYYY']=str(yyyy)
     
     try:
         
@@ -77,12 +81,12 @@ def fetchGradeCard(clgCode,rollno):
         for img in result.findAll('img'):
             img.decompose()
             
-        if not os.path.isdir('Result-PDFs'):
-            os.mkdir('Result-PDFs')
+        if generatePDF and not os.path.isdir('Downloads'):
+            os.mkdir('Downloads')
 
-        filepath = 'Result-PDFs/ScoreCard_'+rollno+'.pdf'
+        filepath = 'Downloads/ScoreCard_'+rollno+'.pdf'
 
-        with open('data/page.html','w',encoding='utf-8') as f:
+        with open(f'.temp/{rollno}.html','w',encoding='utf-8') as f:
             f.write(str(result))
 
         options = {
@@ -96,15 +100,20 @@ def fetchGradeCard(clgCode,rollno):
             'margin-right': '5mm',
             'zoom': '1.5'
         }
-        pdfkit.from_file('data/page.html',filepath,options=options)
+        
+        if generatePDF:
+            pdfkit.from_file(f'.temp/{rollno}.html',filepath,options=options)
         
     except:
         return 0
     
     return filepath
 
-def isResultOut(courseName, sem):
+def isResultOut(courseName, sem):    
     try:
+        if courseName=='' and sem == '':
+            return True
+        
         response = requests.get(URL.split('Combine_GradeCard.aspx')[0]+'List_Of_Declared_Results.aspx',headers=HEADER)
         soup = BeautifulSoup(response.text,'html.parser')
         cells = soup.find('table',attrs={'id':"gvshow_Reg"}).findAll('td')[2:]
@@ -118,21 +127,20 @@ def isResultOut(courseName, sem):
     
         course_sem_dict = dict(zip(course,semester))    
 
-        if courseName!='':
-            flag=0
-            for course,semester in course_sem_dict.items():
-                if (courseName.lower() in course) and (sem.lower() == semester.lower()) :
-                    flag=1
-            if flag==1:
-                return True
-            else:
-                return False
-        return True
+        flag=0
+        for course,semester in course_sem_dict.items():
+            if (courseName.lower() in course) and (sem.lower() == semester.lower()) :
+                flag=1
+        if flag==1:
+            return True
+        else:
+            return False
     
     except:
-        
         #print('Error occurred in fetching result. Retrying...')
-        return False
+        pass
+    
+    return False
 
 def getCoursesNames():
     try:
@@ -171,8 +179,24 @@ def fetchAndSaveClgCodes():
         #print('Error in fetching!')
         return {}
 
-    return clgCodeDict    
+    return clgCodeDict
 
+def printClgCodes():
+
+    with open('Resources/collegeCodes','rb') as g:
+        clgCodeDict = pickle.load(g)
+
+    print('\n{0:65}  {1:^5}'.format('College Name','College Code'))
+    print('{0:65}  {1:^5}'.format('------------','------------\n'))
+    for clg,code in clgCodeDict.items():
+        print('{0:-<65}  {1:^5}'.format(clg,code))
+
+def printCourseNames():
+    with open('Resources/CoursesNames.txt','r',encoding='utf-8') as f:
+        courses = f.read()
+        print()
+        [print(course) for course in courses.split('\n')]
+        
 def getClgCodes():
     
     with open('Resources/collegeCodes','rb') as g:

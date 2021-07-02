@@ -1,12 +1,26 @@
+import requests
+import smtplib
+
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.base import MIMEBase
 from email import encoders
 
-import smtplib
+from config import MAILGUN_APIKEY, MAILGUN_DOMAIN
 
-def sendMail(fromaddr,password,toaddr,filepath):
+def sendMail(toaddr,filepath):
+    return requests.post(
+		f"https://api.mailgun.net/v3/{MAILGUN_DOMAIN}/messages",
+		auth=("api", f"{MAILGUN_APIKEY}"),
+        files=[("attachment", (filepath.split('/')[1], open(filepath,"rb").read()))],
+		data={"from": f"DU Scorecard Fetcher <mailgun@{MAILGUN_DOMAIN}>",
+			"to": [toaddr],
+			"subject": "Your Result",
+			"text": "Please find the attachment."})
+
+
+def sendMailSMTP(fromaddr,password,toaddr,filepath):
     
     msg = MIMEMultipart() 
    
