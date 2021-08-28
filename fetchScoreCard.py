@@ -71,11 +71,11 @@ def main():
     except:
         pass
     
-    choice = input("Welcome to DU ScoreCard Fetcher\n-------------------------------\n\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
+    choice = input("Welcome to AutoFetch Service\n----------------------------\n\nA : Fetch your result.\nB : Fetch multiple results. \nC : Generate rank list. \n\nX : Print all college codes. \nY : Print all course names. \n\n(Enter any other key to exit): ")
     
     if choice.lower()=='x':
         printClgCodes()
-        input("\nPress enter key to continue ")
+        input("\nPress Enter key to continue ")
         try:
             os.system('clear')
         except:
@@ -84,7 +84,7 @@ def main():
         
     if choice.lower()=='y':
         printCourseNames()
-        input("\nPress enter key to continue ")
+        input("\nPress Enter key to continue ")
         try:
             os.system('clear')
         except:
@@ -95,6 +95,8 @@ def main():
         
         subject = ''
         sem = ''
+        email_from = ''
+        email_pass = ''
         email_to = ''
         clgCode = getCollegeCode()
         
