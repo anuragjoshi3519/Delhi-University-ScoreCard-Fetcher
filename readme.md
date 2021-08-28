@@ -79,4 +79,3 @@ pip3 install -r requirements.txt
 1. To check all **college codes**, run :-  `python3 printClgCodes.py` 
 2. To check all **courses names**, run :-  `python3 printCourseNames.py`
 
-
